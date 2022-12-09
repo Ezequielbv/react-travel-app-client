@@ -8,6 +8,7 @@ import Navbar                     from "./components/Navbar/Navbar";
 import IsPrivate                  from "./components/IsPrivate/IsPrivate";
 import IsAnon                     from "./components/IsAnon/IsAnon";
 import GetWeather                 from './components/LocationBoard/GetWeather';
+import Forecast                   from "./components/Forecast/Forecast";
 
 
 function App() {
@@ -47,6 +48,12 @@ function App() {
           path="/test" 
           element={ 
               <GetWeather/>
+          }
+        />
+        <Route 
+          path="/forecast"
+          element={
+            <Forecast />
           }
         />
       </Routes>
