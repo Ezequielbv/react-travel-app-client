@@ -1,21 +1,22 @@
-import React              from 'react';
-import { useContext }     from "react";
-import { Button, Card }   from 'semantic-ui-react'
-import { WeatherContext } from "../../context/weather.context";
-import moment             from 'moment';
-import styled from 'styled-components';
+import React                from 'react';
+import moment               from 'moment';
+import styled               from 'styled-components';
+import { useContext }       from "react";
+import { Button, Card }     from 'semantic-ui-react'
+import { WeatherContext }   from "../../context/weather.context";
+import { FontAwesomeIcon }  from '@fortawesome/react-fontawesome'; 
+import { Dimmer, Loader }   from 'semantic-ui-react';
 import {
-  faCloud,
-  faBolt,
-  faCloudRain,
-  faCloudShowersHeavy,
-  faSnowflake,
-  faSun,
-  faSmog,
-} from '@fortawesome/free-solid-svg-icons';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'; 
-
+        faCloud,
+        faBolt,
+        faCloudRain,
+        faCloudShowersHeavy,
+        faSnowflake,
+        faSun,
+        faSmog,
+      }                   from '@fortawesome/free-solid-svg-icons';
 import './GetWeather.css';
+
 
 function GetWeather() {
   const  { data }   = useContext(WeatherContext);
@@ -71,7 +72,12 @@ function GetWeather() {
           </div>
         </div>  
       </>) 
-      : <>Loading</>
+      : <>
+          Loading...
+        </>
 }
 
+/* If time left :
+* Add Dimmer and Loader to "Loading"
+*/
 export default GetWeather;
