@@ -30,7 +30,7 @@ function WeatherProviderWrapper(props) {
           axios
           .get(`${weatherURL}/weather/?lat=${lat}&lon=${long}&units=metric&appid=${process.env.REACT_APP_API_KEY}`)
           .then((response) => {
-              console.log('response is: ', response)
+              /* console.log('response is: ', response) */
               setData(response.data)
           })
           .catch((error) => console.log(error))
@@ -38,7 +38,7 @@ function WeatherProviderWrapper(props) {
       weatherApiCall()
       }, [lat, long])
       
-     data && console.log(data);
+    /*  data && console.log(data); */
 
       return (
         <WeatherContext.Provider

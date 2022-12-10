@@ -1,83 +1,62 @@
 import React                from 'react';
-import moment               from 'moment';
-import styled               from 'styled-components';
 import { useContext }       from "react";
-import { Button, Card }     from 'semantic-ui-react'
 import { WeatherContext }   from "../../context/weather.context";
-import { FontAwesomeIcon }  from '@fortawesome/react-fontawesome'; 
 import { Dimmer, Loader }   from 'semantic-ui-react';
-import {
-        faCloud,
-        faBolt,
-        faCloudRain,
-        faCloudShowersHeavy,
-        faSnowflake,
-        faSun,
-        faSmog,
-      }                   from '@fortawesome/free-solid-svg-icons';
 import './GetWeather.css';
-
 
 function GetWeather() {
   const  { data }   = useContext(WeatherContext);
   data && console.log("datagetweather", data)
-  data && console.log(data.weather[0].main)
-  
-  const WeatherIcon = styled.div`
-    color: whitesmoke;
-  `;
 
-  const refresh = () => {
-    window.location.reload();
-  }
-  let weatherIcon = null;
-  if (data.weather[0].main === 'Thunderstorm') {
-    weatherIcon = <FontAwesomeIcon icon={faBolt} />;
-  } else if (data.weather[0].main === 'Drizzle') {
-    weatherIcon = <FontAwesomeIcon icon={faCloudRain} />;
-  } else if (data.weather[0].main === 'Rain') {
-    weatherIcon = <FontAwesomeIcon icon={faCloudShowersHeavy} />;
-  } else if (data.weather[0].main === 'Snow') {
-    weatherIcon = <FontAwesomeIcon icon={faSnowflake} />;
-  } else if (data.weather[0].main === 'Clear') {
-    weatherIcon = <FontAwesomeIcon icon={faSun} />;
-  } else if (data.weather[0].main === 'Clouds') {
-    weatherIcon = <FontAwesomeIcon icon={faCloud} />;
-  } else {
-    weatherIcon = <FontAwesomeIcon icon={faSmog} />;
-  } 
-  return data ? 
-      (<> 
-        <div className="main">
-          <div className="top">
-            <p className="header">{ data.name }</p>
-            <Button className="button" inverted color='blue' circular icon='refresh' onClick={refresh} />
+  return data ?
+    (<>
+      <div className="weather">
+        <div className="top">
+          <div>
+            <p className="city">{ data.name }</p>
+            <p className="weather-description">{ data.weather[0].description }</p>
           </div>
-          <div className="flex">
-            <p className="day">{ moment().format('dddd') }, <span>{ moment().format('LL') }</span></p>
-            <div className="flex">
-              <WeatherIcon style={{ fontSize:30,marginTop:15 }}>{ weatherIcon }</WeatherIcon>
-              <p className="description">{ data.weather[0].description }</p>
+          <img
+            alt="weather"
+            className="weather-icon"
+            src={ `icons/${ data.weather[0].icon }.png` }
+          />
+        </div>
+        <div className="bottom">
+          <p className="temperature">{ Math.round(data.main.temp) }°C</p>
+          <div className="details">
+            <div className="parameter-row">
+              <span className="parameter-label">Details</span>
+            </div>
+            <div className="parameter-row">
+              <span className="parameter-label">Feels like</span>
+              <span className="parameter-value">
+                { Math.round(data.main.feels_like) }°C
+              </span>
+            </div>
+            <div className="parameter-row">
+              <span className="parameter-label">Wind</span>
+              <span className="parameter-value">{ data.wind.speed } m/s</span>
+            </div>
+            <div className="parameter-row">
+              <span className="parameter-label">Humidity</span>
+              <span className="parameter-value">{ data.main.humidity }%</span>
+            </div>
+            <div className="parameter-row">
+              <span className="parameter-label">Pressure</span>
+              <span className="parameter-value">{ data.main.pressure } hPa</span>
             </div>
           </div>
-    
-          <div className="flex">
-            <p className="temp">Temperature: { data.main.temp } &deg;C</p>
-            <p className="temp">Humidity: { data.main.humidity } %</p>
-          </div>
-    
-          <div className="flex">
-            <p className="sunrise-sunset">Sunrise: { new Date(data.sys.sunrise * 1000).toLocaleTimeString('en-IN') }</p>
-            <p className="sunrise-sunset">Sunset: { new Date(data.sys.sunset * 1000).toLocaleTimeString('en-IN') }</p>
-          </div>
-        </div>  
-      </>) 
-      : <>
+        </div>
+      </div>
+    </>): 
+    (<>
+      <Dimmer active>
+        <Loader>
           Loading...
-        </>
+        </Loader>
+      </Dimmer>
+    </>)
 }
 
-/* If time left :
-* Add Dimmer and Loader to "Loading"
-*/
 export default GetWeather;
