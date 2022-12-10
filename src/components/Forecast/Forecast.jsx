@@ -1,69 +1,83 @@
 import React                from 'react';
-import moment               from 'moment';
-import styled               from 'styled-components';
 import { useContext }       from "react";
-import { Button, Card }     from 'semantic-ui-react'
 import { ForecastContext }  from '../../context/forecast.context';
-import { FontAwesomeIcon }  from '@fortawesome/react-fontawesome'; 
 import { Dimmer, Loader }   from 'semantic-ui-react';
-import { List }             from '@mui/material';
 import {
-        faCloud,
-        faBolt,
-        faCloudRain,
-        faCloudShowersHeavy,
-        faSnowflake,
-        faSun,
-        faSmog,
-      }                   from '@fortawesome/free-solid-svg-icons';
+        Accordion,
+        AccordionItem,
+        AccordionItemHeading,
+        AccordionItemButton,
+        AccordionItemPanel,
+        }                   from 'react-accessible-accordion';
 import './Forecast.css';
+
+const WEEK_DAYS       = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'];
 
 function Forecast() {
     const  { forecast }   = useContext(ForecastContext);
-    forecast && console.log("forecast weather: ", forecast.list);
+    forecast && console.log("forecast weather: ", forecast.list.splice(0, 7));
+    const dayInAWeek      = new Date().getDay();
+    const forecastDays    = WEEK_DAYS.slice(dayInAWeek, WEEK_DAYS.length).concat(WEEK_DAYS.slice(0, dayInAWeek));
 
-    const WeatherIcon = styled.div`
-        color: whitesmoke;
-    `;
-
-    const forecastResult = forecast && forecast.list.map((item, index) => {
-        let weatherIcon = null;
-        if (item.weather[0].description === 'Thunderstorm') {
-        weatherIcon = <FontAwesomeIcon icon={faBolt} />;
-        } else if (item.weather[0].description === 'Drizzle') {
-            weatherIcon = <FontAwesomeIcon icon={faCloudRain} />;
-        } else if (item.weather[0].description === 'Rain') {
-            weatherIcon = <FontAwesomeIcon icon={faCloudShowersHeavy} />;
-        } else if (item.weather[0].description === 'Snow') {
-            weatherIcon = <FontAwesomeIcon icon={faSnowflake} />;
-        } else if (item.weather[0].description === 'Clear') {
-            weatherIcon = <FontAwesomeIcon icon={faSun} />;
-        } else if (item.weather[0].description === 'Clouds') {
-            weatherIcon = <FontAwesomeIcon icon={faCloud} />;
-        } else {
-            weatherIcon = <FontAwesomeIcon icon={faSmog} />;
-        } 
-
-        return forecast ?
+    return forecast ?
         (<>
-            <div key={ index } className="forecast">
-              <div className="flex-forecast">
-                <p>{ moment(item.dt_txt).format("dddd") }</p>
-                <WeatherIcon style={{fontSize:25,marginTop:4}}>{ weatherIcon }</WeatherIcon>
-                <p>{ item.main.temp } &deg;C</p>
-              </div>
-            </div>
-        </>):   
-        <>
-            Loading ...
-        </>
-    })
-   
-   return(
-        <div>
-          <List aria-label="forecast data">{ forecastResult }</List>
-        </div>
-    );
+            <label className="title">Daily</label>
+            <Accordion>
+                { forecast.list.splice(0, 7).map((item, index) => (
+                    <AccordionItem key={ index }>
+                        <AccordionItemHeading>
+                            <AccordionItemButton>
+                                <div className="daily-item">
+                                    <img 
+                                        src={ `icons/${ item.weather[0].icon }.png` }
+                                        className="icon-small" 
+                                        alt="weather" 
+                                    />
+                                    <label className="day">{ forecastDays[index] }</label>
+                                    <label className="description">{ item.weather[0].description }</label>
+                                    <label className="min-max">{ Math.round(item.main.temp_max) }°C / { Math.round(item.main.temp_min) }°C</label>
+                                </div>
+                            </AccordionItemButton>
+                        </AccordionItemHeading>
+                        <AccordionItemPanel>
+                            <div className="daily-details-grid">
+                                <div className="daily-details-grid-item">
+                                    <label>Pressure:</label>
+                                    <label>{ item.main.pressure }</label>
+                                </div>
+                                <div className="daily-details-grid-item">
+                                    <label>Humidity:</label>
+                                    <label>{ item.main.humidity }</label>
+                                </div>
+                                <div className="daily-details-grid-item">
+                                    <label>Clouds:</label>
+                                    <label>{ item.clouds.all }%</label>
+                                </div>
+                                <div className="daily-details-grid-item">
+                                    <label>Wind speed:</label>
+                                    <label>{ item.wind.speed } m/s</label>
+                                </div>
+                                <div className="daily-details-grid-item">
+                                    <label>Sea level:</label>
+                                    <label>{ item.main.sea_level }m</label>
+                                </div>
+                                <div className="daily-details-grid-item">
+                                    <label>Feels like:</label>
+                                    <label>{ item.main.feels_like }°C</label>
+                                </div>
+                            </div>
+                        </AccordionItemPanel>
+                    </AccordionItem> 
+                )) }
+            </Accordion>
+        </>) :
+        (<>
+            <Dimmer active>
+                <Loader>
+                    Loading ...
+                </Loader>
+            </Dimmer>
+        </>) 
 }
 
 export default Forecast;
