@@ -14,9 +14,9 @@ import 'semantic-ui-css/semantic.min.css'
     <AuthProviderWrapper>
       <WeatherProviderWrapper>
         <ForecastProviderWrapper>
-          <MapProviderWrapper>
+{/*           <MapProviderWrapper> */}
             <App />
-          </MapProviderWrapper>
+         {/*  </MapProviderWrapper> */}
         </ForecastProviderWrapper>
       </WeatherProviderWrapper>
     </AuthProviderWrapper>
