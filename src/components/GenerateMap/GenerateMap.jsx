@@ -1,4 +1,4 @@
-import React        from 'react';
+/* import React        from 'react';
 import ReactDOM     from 'react-dom';
 import mapboxgl     from '!mapbox-gl'; // eslint-disable-line import/no-webpack-loader-syntax
 import 'mapbox-gl/dist/mapbox-gl.css';
@@ -18,7 +18,7 @@ function GenerateMap() {
         </div>
       <div ref={mapContainer} className="map-container" />
     </div>
-  );
+  ); 
 }
 
-export default GenerateMap;
+export default GenerateMap; */

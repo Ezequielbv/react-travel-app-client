@@ -1,4 +1,4 @@
-import React        from 'react';
+/* import React        from 'react';
 import ReactDOM     from 'react-dom';
 import mapboxgl     from '!mapbox-gl'; // eslint-disable-line import/no-webpack-loader-syntax
 import { useRef, useState, useEffect } from "react";
@@ -18,7 +18,7 @@ function MapProviderWrapper(props) {
     if (map.current) return; // initialize map only once
     map.current = new mapboxgl.Map({
       container:  mapContainer.current, //tells Mapbox GL JS to render the map inside a specific DOM 
-      style:      'mapbox://styles/mapbox/streets-v12',
+      style:      'mapbox://styles/micaela-rosadio/clbjpb0wp006c14r3d53924fz',
       center:     [long, lat],
       zoom:       zoom
     });
@@ -49,3 +49,4 @@ function MapProviderWrapper(props) {
 
 export { MapProviderWrapper, MapContext };
 
+ */
