@@ -1,10 +1,16 @@
 import "./App.css";
-import { Routes, Route } from "react-router-dom";
+import { Routes, Route }          from "react-router-dom";
+import HomePage                   from "./pages/HomePage/HomePage";
+import ProfilePage                from "./pages/ProfilePage/ProfilePage";
+import SignupPage                 from "./pages/SignupPage/SignupPage";
+import LoginPage                  from "./pages/LoginPage/LoginPage";
+import Navbar                     from "./components/Navbar/Navbar";
+import IsPrivate                  from "./components/IsPrivate/IsPrivate";
+import IsAnon                     from "./components/IsAnon/IsAnon";
+import GetWeather                 from './components/LocationBoard/GetWeather';
+import Forecast                   from "./components/Forecast/Forecast";
+import GenerateMap                from './components/GenerateMap/GenerateMap';
 
-import HomePage from "./pages/HomePage/HomePage";
-import ProfilePage from "./pages/ProfilePage/ProfilePage";
-import SignupPage from "./pages/SignupPage/SignupPage";
-import LoginPage from "./pages/LoginPage/LoginPage";
 
 import Navbar from "./components/Navbar/Navbar";
 import IsPrivate from "./components/IsPrivate/IsPrivate";
@@ -46,9 +52,21 @@ function App() {
           }
         />
         <Route
+          path="/test" 
+          element={ 
+            <div className="container">
+              <GetWeather />
+              <Forecast />
+            </div>
+          }
+        /> 
+        <Route 
           path="/map"
-          element={<InputField />}
+          element={
+            <GenerateMap />
+          }
         />
+  
       </Routes>
     </div>
   );
