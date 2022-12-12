@@ -1,9 +1,11 @@
 import "./ProfilePage.css";
 import React, { useState, useEffect } from "react";
-import axios from 'axios';
+import axios          from 'axios';
+import LocationForm   from "../LocationForm/LocationForm";
 
 // const API_COUNTRY = 'https://restcountries.com/v3.1/all';
-const country = 'germany';
+//const country     = 'germany';
+console.log(country)
 const API_COUNTRY = `https://restcountries.com/v3.1/name/${country}`;
 
 function ProfilePage() {
