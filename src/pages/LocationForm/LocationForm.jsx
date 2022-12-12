@@ -15,6 +15,7 @@ function LocationForm(props) {
     const [city, setCity]                   = useState("");
     const [date, setDate]                   = useState("");
     const [coordinates, setCoordinates]     = useState([]);
+    let   country                           = "";
 
     const handleCity  = (e) => setCity(e.target.value);
     const handleDate  = (e) => setDate(e.target.value);
@@ -36,6 +37,10 @@ function LocationForm(props) {
           coordinates
         }
         console.log("info submit.", newLocation);
+
+        // Save country name
+        country = newLocation.city.split(', ')[newLocation.city.split(', ').length-1];
+        console.log(country);
 
         axios.post(`${DB_LOCATION}/api/form`, newLocation)
           .then((response) => {
