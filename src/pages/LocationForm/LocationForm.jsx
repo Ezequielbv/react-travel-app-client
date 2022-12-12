@@ -1,17 +1,21 @@
-import { useState } from "react";
+import { useState, useContext } from "react";
 import styled from "styled-components";
 import useInput from "../../components/InputField/UseInput";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
+import { ForecastContext } from "../../context/forecast.context";
+import { WeatherContext } from "../../context/weather.context";
+
 
 const DB_LOCATION = 'http://localhost:5005'
 // const DB_LOCATION = 'mongodb://localhost:27017'
 
 function LocationForm(props) {
-    // console.log("props in LocationForm", props)
-    const [city, setCity] = useState("");
-    const [date, setDate] = useState("");
-    const [coordinates, setCoordinates] = useState([]);
+    const { setLat, setLong }               = useContext(ForecastContext);
+    const { setWeatherLat, setWeatherLong } = useContext(WeatherContext); 
+    const [city, setCity]                   = useState("");
+    const [date, setDate]                   = useState("");
+    const [coordinates, setCoordinates]     = useState([]);
 
     const handleCity = (e) => setCity(e.target.value);
     const handleDate = (e) => setDate(e.target.value);
@@ -37,6 +41,10 @@ function LocationForm(props) {
         axios.post(`${DB_LOCATION}/api/form`, newLocation)
           .then((response) => {
               console.log("response from axios form: ", response);
+              setLat(newLocation.coordinates[1]);
+              setLong(newLocation.coordinates[0]);
+              setWeatherLat(newLocation.coordinates[1]);
+              setWeatherLong(newLocation.coordinates[0]);
               navigate("/test");
           })
           .catch(err => console.log(err))

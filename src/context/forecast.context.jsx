@@ -9,14 +9,14 @@ function ForecastProviderWrapper(props) {
     const [long, setLong]           = useState("");
     const [forecast, setForecast]   = useState(undefined);
 
-    useEffect(() => {
+    /* useEffect(() => {
         navigator
         .geolocation
         .getCurrentPosition(function(position) {
           setLat(position.coords.latitude);
           setLong(position.coords.longitude);
         });
-    }, []);
+    }, []); */
 
     useEffect(() => {
         const forecastApiCall = () => {
@@ -35,8 +35,10 @@ function ForecastProviderWrapper(props) {
     return (
       <ForecastContext.Provider
         value={{
-          lat,
+          lat, 
+          setLat,
           long,
+          setLong,
           forecast
         }}
       >
