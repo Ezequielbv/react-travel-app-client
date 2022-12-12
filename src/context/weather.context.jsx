@@ -21,7 +21,7 @@ function WeatherProviderWrapper(props) {
           axios
           .get(`${weatherURL}/weather/?lat=${weatherLat}&lon=${weatherLong}&units=metric&appid=${process.env.REACT_APP_API_KEY}`)
           .then((response) => {
-              /* console.log('response is: ', response) */
+              console.log('response is: ', response) 
               setData(response.data)
           })
           .catch((error) => console.log(error))
