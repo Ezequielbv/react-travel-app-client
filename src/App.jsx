@@ -68,7 +68,6 @@ function App() {
             <LocationForm />
           }
         />
-  
       </Routes>
     </div>
   );
