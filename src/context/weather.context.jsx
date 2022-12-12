@@ -14,16 +14,7 @@ const WeatherContext = React.createContext();
 function WeatherProviderWrapper(props) {
     const [weatherLat, setWeatherLat]     = useState("");
     const [weatherLong, setWeatherLong]   = useState("");
-    const [data, setData]   = useState(undefined);
-
-    /* useEffect(() => {
-        navigator
-        .geolocation
-        .getCurrentPosition(function(position) {
-          setLat(position.coords.latitude);
-          setLong(position.coords.longitude);
-        });
-      }, []); */
+    const [data, setData]                 = useState(undefined);
     
     useEffect(() => {
       const weatherApiCall = () => {
@@ -39,7 +30,6 @@ function WeatherProviderWrapper(props) {
       }, [weatherLat, weatherLong])
       
     /*  data && console.log(data); */
-
       return (
         <WeatherContext.Provider
           value={{

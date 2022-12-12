@@ -10,9 +10,8 @@ import IsAnon                     from "./components/IsAnon/IsAnon";
 import GetWeather                 from './components/LocationBoard/GetWeather';
 import Forecast                   from "./components/Forecast/Forecast";
 import GenerateMap                from './components/GenerateMap/GenerateMap';
-
-import InputField from "./components/InputField/InputField";
-import LocationForm from "./pages/LocationForm/LocationForm";
+import InputField                 from "./components/InputField/InputField";
+import LocationForm               from "./pages/LocationForm/LocationForm";
 
 function App() {
   return (

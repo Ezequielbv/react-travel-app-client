@@ -1,11 +1,10 @@
 import { useState, useContext } from "react";
-import styled from "styled-components";
-import useInput from "../../components/InputField/UseInput";
-import { useNavigate } from "react-router-dom";
-import axios from "axios";
-import { ForecastContext } from "../../context/forecast.context";
-import { WeatherContext } from "../../context/weather.context";
-
+import { useNavigate }          from "react-router-dom";
+import { ForecastContext }      from "../../context/forecast.context";
+import { WeatherContext }       from "../../context/weather.context";
+import styled                   from "styled-components";
+import useInput                 from "../../components/InputField/UseInput";
+import axios                    from "axios";
 
 const DB_LOCATION = 'http://localhost:5005'
 // const DB_LOCATION = 'mongodb://localhost:27017'
@@ -17,8 +16,8 @@ function LocationForm(props) {
     const [date, setDate]                   = useState("");
     const [coordinates, setCoordinates]     = useState([]);
 
-    const handleCity = (e) => setCity(e.target.value);
-    const handleDate = (e) => setDate(e.target.value);
+    const handleCity  = (e) => setCity(e.target.value);
+    const handleDate  = (e) => setDate(e.target.value);
     const handleClick = (suggestion) => {
         console.log("clicked city coordinates:", suggestion.center);
         address.setValue(suggestion.place_name);
@@ -48,14 +47,12 @@ function LocationForm(props) {
               navigate("/test");
           })
           .catch(err => console.log(err))
-        // props.setFoodList([newFood, ...props.foodList]);
     }
 
     const address = useInput("");
     
     return (
         <form onSubmit={handleSubmit}>
-
             <label>City</label>
             <input
                 value={city}
@@ -63,20 +60,21 @@ function LocationForm(props) {
                 placeholder="Address"
                 {...address}
                 isTyping={address.value !== ""}
+                className="geocoder"
             />
             {address.suggestions?.length > 0 && (
                 <div>
-                {address.suggestions.map((suggestion, index) => {
-                    return (
-                    <div
-                        key={index}
-                        onClick={() => {
-                            handleClick(suggestion);
-                        }}
-                    >
-                        {suggestion.place_name}
-                    </div>
-                    );
+                    {address.suggestions.map((suggestion, index) => {
+                        return (
+                            <div
+                                key={index}
+                                onClick={() => {
+                                    handleClick(suggestion);
+                                }}
+                            >
+                                {suggestion.place_name}
+                            </div>
+                        );
                     })}
                 </div>
             )}
@@ -91,21 +89,4 @@ function LocationForm(props) {
     )
 }
 
-export default LocationForm
-
-
-
-const Input = styled.input`
-  width: 400px;
-  background: white;
-  border: none;
-  padding: 10px 20px;
-  border-radius: 30px;
-  position: relative;
-  display: grid;
-  justify-self: center;
-  &:focus {
-    outline: none;
-    border-radius: ${(props) => props.isTyping && "10px 10px 0px 0px"};
-  }
-`;
+export default LocationForm;
