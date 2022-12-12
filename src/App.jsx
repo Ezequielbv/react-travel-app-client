@@ -12,6 +12,7 @@ import Forecast                   from "./components/Forecast/Forecast";
 import GenerateMap                from './components/GenerateMap/GenerateMap';
 
 import InputField from "./components/InputField/InputField";
+import LocationForm from "./pages/LocationForm/LocationForm";
 
 function App() {
   return (
@@ -59,6 +60,12 @@ function App() {
           path="/map"
           element={
             <GenerateMap />
+          }
+        />
+        <Route 
+          path="/form"
+          element={
+            <LocationForm />
           }
         />
   
