@@ -9,6 +9,8 @@ import LoginPage from "./pages/LoginPage/LoginPage";
 import Navbar from "./components/Navbar/Navbar";
 import IsPrivate from "./components/IsPrivate/IsPrivate";
 import IsAnon from "./components/IsAnon/IsAnon";
+import GenerateMap from "./components/GenerateMap/GenerateMap";
+import InputField from "./components/InputField/InputField";
 
 function App() {
   return (
@@ -42,6 +44,10 @@ function App() {
               <LoginPage />
             </IsAnon>
           }
+        />
+        <Route
+          path="/map"
+          element={<InputField />}
         />
       </Routes>
     </div>
