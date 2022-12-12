@@ -1,0 +1,10 @@
+.geocoder {
+    width: 400px;
+    background: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 30px;
+    position: relative;
+    display: grid;
+    justify-self: center;
+}

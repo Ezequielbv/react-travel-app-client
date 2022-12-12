@@ -10,15 +10,6 @@ function ForecastProviderWrapper(props) {
     const [forecast, setForecast]   = useState(undefined);
 
     useEffect(() => {
-        navigator
-        .geolocation
-        .getCurrentPosition(function(position) {
-          setLat(position.coords.latitude);
-          setLong(position.coords.longitude);
-        });
-    }, []);
-
-    useEffect(() => {
         const forecastApiCall = () => {
             axios
             .get(`${WEATHER_API_URL}/forecast?lat=${lat}&lon=${long}&units=metric&appid=${process.env.REACT_APP_API_KEY}`)
@@ -35,8 +26,10 @@ function ForecastProviderWrapper(props) {
     return (
       <ForecastContext.Provider
         value={{
-          lat,
+          lat, 
+          setLat,
           long,
+          setLong,
           forecast
         }}
       >

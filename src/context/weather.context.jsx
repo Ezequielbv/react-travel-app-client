@@ -12,23 +12,14 @@ const WeatherContext = React.createContext();
 ********************************************************************/
 
 function WeatherProviderWrapper(props) {
-    const [lat, setLat]     = useState("");
-    const [long, setLong]   = useState("");
-    const [data, setData]   = useState(undefined);
-
-    useEffect(() => {
-        navigator
-        .geolocation
-        .getCurrentPosition(function(position) {
-          setLat(position.coords.latitude);
-          setLong(position.coords.longitude);
-        });
-      }, []);
+    const [weatherLat, setWeatherLat]     = useState("");
+    const [weatherLong, setWeatherLong]   = useState("");
+    const [data, setData]                 = useState(undefined);
     
     useEffect(() => {
       const weatherApiCall = () => {
           axios
-          .get(`${weatherURL}/weather/?lat=${lat}&lon=${long}&units=metric&appid=${process.env.REACT_APP_API_KEY}`)
+          .get(`${weatherURL}/weather/?lat=${weatherLat}&lon=${weatherLong}&units=metric&appid=${process.env.REACT_APP_API_KEY}`)
           .then((response) => {
               /* console.log('response is: ', response) */
               setData(response.data)
@@ -36,15 +27,16 @@ function WeatherProviderWrapper(props) {
           .catch((error) => console.log(error))
         }
       weatherApiCall()
-      }, [lat, long])
+      }, [weatherLat, weatherLong])
       
     /*  data && console.log(data); */
-
       return (
         <WeatherContext.Provider
           value={{
-            lat,
-            long,
+            weatherLat,
+            setWeatherLat,
+            weatherLong,
+            setWeatherLong,
             data
           }}
         >
