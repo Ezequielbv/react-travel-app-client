@@ -9,6 +9,7 @@ import IsPrivate                  from "./components/IsPrivate/IsPrivate";
 import IsAnon                     from "./components/IsAnon/IsAnon";
 import GetWeather                 from './components/LocationBoard/GetWeather';
 import Forecast                   from "./components/Forecast/Forecast";
+import Profile                   from "./pages/ProfilePage/ProfilePage";
 import GenerateMap                from './components/GenerateMap/GenerateMap';
 import LocationForm               from "./pages/LocationForm/LocationForm";
 
@@ -48,6 +49,7 @@ function App() {
           path="/test" 
           element={ 
             <div className="container">
+              <Profile />
               <GetWeather />
               <Forecast />
             </div>
