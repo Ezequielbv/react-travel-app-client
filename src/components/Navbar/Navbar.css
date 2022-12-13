@@ -1,0 +1,25 @@
+:root {
+    --main-color: #FBEDD4;
+    --color-theme-1: #FFB95F;
+    --color-theme-2: #53407E;
+    --color-theme-3: #B3DBCD;
+    --color-theme-4: #227469;
+    --color-theme-5: #FCF6E3;
+}
+
+h1 {
+    font-size: 4em;
+    text-align: center;
+    font-weight: 700;
+    font-family: 'Pacifico', cursive!important;
+    font-family: 'Shadows Into Light', cursive!important;
+}
+.navbar-brand {
+    letter-spacing: 3px;
+    font-family: 'Pacifico', cursive!important;
+    font-family: 'Shadows Into Light', cursive!important;
+}
+nav.navbar {
+    /* background-color: #2081c3; */
+    background-color: var(--color-theme-4);
+}

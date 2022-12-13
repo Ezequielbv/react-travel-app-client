@@ -1,3 +1,22 @@
+@import url('https://fonts.googleapis.com/css2?family=PT+Sans+Narrow:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Shadows+Into+Light&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
+
+/* @font-face { 
+  font-family: 'Lane';
+  src: url('/public/fonts/LANE_E') format('woff');
+} */
+/* 
+:root {
+  --main-color: #FBEDD4;
+  --color-theme-1: #FFB95F;
+  --color-theme-2: #53407E;
+  --color-theme-3: #B3DBCD;
+  --color-theme-4: #227469;
+  --color-theme-5: #FCF6E3;
+} */
+
 body {
   margin: 0;
 }
+
