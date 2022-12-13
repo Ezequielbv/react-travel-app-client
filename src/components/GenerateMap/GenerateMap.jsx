@@ -1,24 +1,48 @@
-/* import React        from 'react';
-import ReactDOM     from 'react-dom';
-import mapboxgl     from '!mapbox-gl'; // eslint-disable-line import/no-webpack-loader-syntax
-import 'mapbox-gl/dist/mapbox-gl.css';
-import { useRef, useContext }       from "react";
-import { MapContext } from 'react-map-gl/dist/esm/components/map';
-
+import React, { useEffect } from 'react';
+import mapboxgl       from 'mapbox-gl';
+import axios          from 'axios';
 import './GenerateMap.css'
 
+/*  Declare tokens and API URL  */
+const DB_LOCATION         = 'http://localhost:5005/api';
+mapboxgl.accessToken = process.env.REACT_APP_MAPBOX_API_ACCESS_TOKEN;
 
 function GenerateMap() {
- const  { long, lat, zoom } = useContext(MapContext);
-  const mapContainer    = useRef(null);
+  function initializeMap() {
+    const mapboxMap = new mapboxgl.Map({
+      container:    "mapbox-all",
+      style:        "mapbox://styles/micaela-rosadio/clbjpb0wp006c14r3d53924fz",
+      center:       [13.4, 52.5], 
+      zoom:         10 
+    })
+  /*  Get coordinates of all users  */
+  axios.get(`${DB_LOCATION}/user-coordinates`)
+      .then(location => {
+            location.data.coordinates.forEach((coordinate) => {
+              const el     = document.createElement('div');
+              el.className = 'marker';
+              console.log("coordinates display:", coordinate)
+              new mapboxgl.Marker(el)
+                  .setLngLat(coordinate.coordinates)
+                  .setPopup(
+                    new mapboxgl.Popup({ offset: 25 }) // add popups
+                                .setHTML(`<h3>${ coordinate.city }</h3>`)
+                  )
+              .addTo(mapboxMap); 
+          }) 
+        })        
+  .catch(err => console.log(err));
+  }
+  /*  Initialize map */
+  useEffect(() => {
+    initializeMap();
+  }, []);
+
   return (
     <div>
-        <div className="sidebar">
-          Longitude: { long } | Latitude: { lat } | Zoom: { zoom }
-        </div>
-      <div ref={mapContainer} className="map-container" />
+      <div id="mapbox-all"/>
     </div>
-  ); 
+  )
 }
 
-export default GenerateMap; */
+export default GenerateMap;
