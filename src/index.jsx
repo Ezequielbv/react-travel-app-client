@@ -6,6 +6,7 @@ import { AuthProviderWrapper }            from "./context/auth.context";
 import { WeatherProviderWrapper }         from "./context/weather.context";
 import { ForecastProviderWrapper }        from "./context/forecast.context";
 import { MapProviderWrapper }             from "./context/map.context";
+import { LocationFormProviderWrapper }    from "./context/location-form.context";
 import "./index.css";
 import 'semantic-ui-css/semantic.min.css'
 
@@ -15,7 +16,9 @@ import 'semantic-ui-css/semantic.min.css'
       <WeatherProviderWrapper>
         <ForecastProviderWrapper>
 {/*           <MapProviderWrapper> */}
+          <LocationFormProviderWrapper>
             <App />
+          </LocationFormProviderWrapper>
          {/*  </MapProviderWrapper> */}
         </ForecastProviderWrapper>
       </WeatherProviderWrapper>
