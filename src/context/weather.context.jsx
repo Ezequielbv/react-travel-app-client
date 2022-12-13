@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from "react";
 import axios                          from "axios";
 
-const weatherURL     = 'https://api.openweathermap.org/data/2.5'
-const WeatherContext = React.createContext();
+const WEATHER_API_URL = 'https://api.openweathermap.org/data/2.5'
+const WeatherContext  = React.createContext();
 
 /*******************************************************************
 * We get our latitude and longitude using navigator.geolocation and 
@@ -19,7 +19,7 @@ function WeatherProviderWrapper(props) {
     useEffect(() => {
       const weatherApiCall = () => {
           axios
-          .get(`${weatherURL}/weather/?lat=${weatherLat}&lon=${weatherLong}&units=metric&appid=${process.env.REACT_APP_API_KEY}`)
+          .get(`${WEATHER_API_URL}/weather/?lat=${weatherLat}&lon=${weatherLong}&units=metric&appid=${process.env.REACT_APP_API_KEY}`)
           .then((response) => {
               console.log('response is: ', response) 
               setData(response.data)

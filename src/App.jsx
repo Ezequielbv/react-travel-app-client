@@ -29,7 +29,6 @@ function App() {
             </IsPrivate>
           }
         />
-
         <Route
           path="/signup"
           element={
@@ -55,12 +54,12 @@ function App() {
             </div>
           }
         /> 
-        <Route 
+        {/* <Route 
           path="/map"
           element={
             <GenerateMap />
           }
-        />
+        /> */}
         <Route 
           path="/form"
           element={

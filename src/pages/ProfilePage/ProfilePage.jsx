@@ -1,23 +1,24 @@
-import "./ProfilePage.css";
-import React, { useState, useEffect } from "react";
+/* import "./ProfilePage.css";
+import React, { useState, useEffect, useContext } from "react";
 import axios          from 'axios';
-import LocationForm   from "../LocationForm/LocationForm";
+import { LocationFormContext } from "../../context/location-form.context"; 
 
 // const API_COUNTRY = 'https://restcountries.com/v3.1/all';
 //const country     = 'germany';
-console.log(country)
-const API_COUNTRY = `https://restcountries.com/v3.1/name/${country}`;
+
+const COUNTRY_API_URL = 'https://restcountries.com/v3.1/name';
 
 function ProfilePage() {
+  const { country } = useContext(LocationFormContext);
+  const [fetching, setFetching] = useState(true); */
+  /* const [country, setCountry] = useState([]); */
 
-  const [fetching, setFetching] = useState(true);
-  const [country, setCountry] = useState([]);
-
-  useEffect(() => {
+  /* useEffect(() => {
     // console.log("useEffect - Initial render (Mounting)");
-    axios.get(API_COUNTRY)
+    axios.get(`${COUNTRY_API_URL}/${country}`)
       .then((response) => {
-        setCountry(response.data[0]);
+        console.log(response)
+        setCountry(response.data);
         setFetching(false);
       });
   }, []);
@@ -28,7 +29,7 @@ function ProfilePage() {
       <h1>Profile page</h1>
 
       <div className='countryInfo'>
-        <p>Capital: {country.capital}</p>
+        <p>Capital: { country.capital }</p>  */
         {/* <p>Currency: {Object.entries(country.currencies)[0][1].name}</p> */}
         {/* <p>Language: {Object.entries(country.languages).map(el => {
                 return (
@@ -36,9 +37,9 @@ function ProfilePage() {
                 )
               })}</p> */}
 
-      </div>
+   /*     </div>
     </div>
   );
 }
 
-export default ProfilePage;
+export default ProfilePage;  */
