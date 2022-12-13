@@ -1,45 +1,57 @@
-/* import "./ProfilePage.css";
+import "./ProfilePage.css";
 import React, { useState, useEffect, useContext } from "react";
+import { LocationFormContext } from "../../context/location-form.context";
+import { Dimmer, Loader }   from 'semantic-ui-react';
+
 import axios          from 'axios';
-import { LocationFormContext } from "../../context/location-form.context"; 
 
-// const API_COUNTRY = 'https://restcountries.com/v3.1/all';
-//const country     = 'germany';
-
-const COUNTRY_API_URL = 'https://restcountries.com/v3.1/name';
+const COUNTRY_API_URL = 'https://restcountries.com/v3.1';
 
 function ProfilePage() {
-  const { country } = useContext(LocationFormContext);
-  const [fetching, setFetching] = useState(true); */
-  /* const [country, setCountry] = useState([]); */
+  const { country }       = useContext(LocationFormContext);
+  const [countryData, setCountryData] = useState("");
+  const [fetching, setFetching]       = useState(true);
+  country && console.log(country);
 
-  /* useEffect(() => {
-    // console.log("useEffect - Initial render (Mounting)");
-    axios.get(`${COUNTRY_API_URL}/${country}`)
+  useEffect(() => {
+    console.log("useEffect - Initial render (Mounting)");
+    axios.get(`${COUNTRY_API_URL}/name/${country}`)
       .then((response) => {
         console.log(response)
-        setCountry(response.data);
+        setCountryData(response.data);
         setFetching(false);
       });
   }, []);
-  country && console.log("country info", Object.entries(country.currencies)[0][1].name);
+  countryData && console.log(countryData)
+  countryData && console.log(countryData[0].name.nativeName);
+  
+  //Languages
+  countryData && console.log(Object.entries(countryData[0].languages)[0])
 
-  return (
-    <div>
-      <h1>Profile page</h1>
-
-      <div className='countryInfo'>
-        <p>Capital: { country.capital }</p>  */
-        {/* <p>Currency: {Object.entries(country.currencies)[0][1].name}</p> */}
-        {/* <p>Language: {Object.entries(country.languages).map(el => {
-                return (
-                  <li>{el[1]}</li>
-                )
-              })}</p> */}
-
-   /*     </div>
-    </div>
-  );
+  return countryData ? 
+    (<>
+      <div>
+        <h1>Profile page</h1>
+        <div className='countryInfo'>
+          <p>Common name: { Object.entries(countryData[0].name.nativeName)[0][1].common }</p>
+          {/* <p>Native name: { countryData[0].name.nativeName } </p> */}
+          <p>Capital: { countryData[0].capital }</p>  
+          <p>Currency: {Object.entries(countryData[0].currencies)[0][1].name}</p>
+          <p>Languages: {Object.entries(countryData[0].languages).map(el => {
+                  return (
+                    <li>{el[1]}</li>
+                  )
+                })}</p> 
+          </div>
+      </div>
+    </>) :
+    (<>
+      <Dimmer active>
+                <Loader>
+                    Loading ...
+                </Loader>
+      </Dimmer>
+    </>);
 }
 
-export default ProfilePage;  */
+export default ProfilePage;

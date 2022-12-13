@@ -1,5 +1,6 @@
 import { useContext }           from "react";
 import { LocationFormContext }  from "../../context/location-form.context";
+import { AuthContext } from "../../context/auth.context";
 
 function LocationForm() {
     const { city,
@@ -10,7 +11,7 @@ function LocationForm() {
             handleCity,
             handleClick,
             handleDate,
-            handleSubmit } = useContext(LocationFormContext);
+            handleSubmit } = useContext(LocationFormContext);    
     return (
         <form onSubmit={ handleSubmit }>
             <label>City</label>

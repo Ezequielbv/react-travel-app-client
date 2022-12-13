@@ -2,6 +2,7 @@ import React, { useState, useContext }   from "react";
 import { useNavigate }                   from "react-router-dom";
 import { WeatherContext }                from "./weather.context";
 import { ForecastContext }               from "./forecast.context";
+import { AuthContext }                   from "./auth.context";
 import axios                             from "axios";
 import useInput                          from "../components/InputField/UseInput";
 
@@ -16,6 +17,7 @@ function LocationFormProviderWrapper(props) {
     const [date, setDate]                   = useState("");
     const [coordinates, setCoordinates]     = useState([]);
     const address                           = useInput("");
+    const { user } = useContext(AuthContext);
     const handleCity  = (e) => setCity(e.target.value);
     const handleDate  = (e) => setDate(e.target.value);
     const handleClick = (suggestion) => {
@@ -29,21 +31,22 @@ function LocationFormProviderWrapper(props) {
     const navigate = useNavigate();
     const handleSubmit = event => {
         event.preventDefault();
-        const newLocation = {
+        const requestBody = {
+          user,
           city,
           country,
           date,
           coordinates
         };
-        console.log("info submit.", newLocation);
+        console.log("info submitted", requestBody);
 
-        axios.post(`${DB_LOCATION}/api/form`, newLocation)
+        axios.post(`${DB_LOCATION}/api/form`, requestBody)
           .then((response) => {
               console.log("response from axios form: ", response);
-              setLat(newLocation.coordinates[1]);
-              setLong(newLocation.coordinates[0]);
-              setWeatherLat(newLocation.coordinates[1]);
-              setWeatherLong(newLocation.coordinates[0]);
+              setLat(requestBody.coordinates[1]);
+              setLong(requestBody.coordinates[0]);
+              setWeatherLat(requestBody.coordinates[1]);
+              setWeatherLong(requestBody.coordinates[0]);
               navigate("/test");
           })
           .catch(err => console.log(err))
