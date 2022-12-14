@@ -46,14 +46,14 @@ function SignupPage() {
   };
 
   return (
-    <div className="SignupPage">
-      <h1>Sign Up</h1>
+    <div className="SignupPage trav-card bg-col1 mt-5" id="form">
+      <h1 className="mb-3">Sign Up</h1>
 
       <form onSubmit={handleSignupSubmit}>
-        <label>Email:</label>
+        <label className="d-flex justify-content-between">Email:</label>
         <input type="email" name="email" value={email} onChange={handleEmail} />
 
-        <label>Password:</label>
+        <label className="d-flex justify-content-between">Password:</label>
         <input
           type="password"
           name="password"
@@ -61,10 +61,14 @@ function SignupPage() {
           onChange={handlePassword}
         />
 
-        <label>Name:</label>
+        <label className="d-flex justify-content-between">Name:</label>
         <input type="text" name="name" value={name} onChange={handleName} />
 
-        <button type="submit">Sign Up</button>
+        <hr className="w-100"/>
+        <hr className="w-100"/>
+        <hr className="w-100"/>
+
+        <button type="submit" className="btn btn-col4 text-white mt-3">Sign Up</button>
       </form>
 
       {errorMessage && <p className="error-message">{errorMessage}</p>}

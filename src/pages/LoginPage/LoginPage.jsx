@@ -45,14 +45,14 @@ function LoginPage() {
   };
 
   return (
-    <div className="LoginPage">
-      <h1>Login</h1>
+    <div className="LoginPage trav-card bg-col1 mt-5" id="login-form">
+      <h1 className="mb-2">Login</h1>
 
       <form onSubmit={handleLoginSubmit}>
-        <label>Email:</label>
+        <label className="d-flex justify-content-between">Email:</label>
         <input type="email" name="email" value={email} onChange={handleEmail} />
 
-        <label>Password:</label>
+        <label className="d-flex justify-content-between mb-3">Password:</label>
         <input
           type="password"
           name="password"
@@ -60,7 +60,12 @@ function LoginPage() {
           onChange={handlePassword}
         />
 
-        <button type="submit">Login</button>
+        <hr className="w-100" />
+        <hr className="w-100" />
+        <hr className="w-100" />
+        <hr className="w-100" />
+
+        <button type="submit" className="btn btn-col4 text-white mt-3">Login</button>
       </form>
       {errorMessage && <p className="error-message">{errorMessage}</p>}
 
