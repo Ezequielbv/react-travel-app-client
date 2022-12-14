@@ -1,0 +1,97 @@
+@import url('https://fonts.googleapis.com/css2?family=PT+Sans+Narrow:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Shadows+Into+Light&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
+
+:root {
+  --main-color: #FBEDD4;
+  --color-theme-1: #FFB95F;
+  --color-theme-2: #53407E;
+  --color-theme-3: #B3DBCD;
+  --color-theme-4: #227469;
+  --color-theme-5: #FCF6E3;
+
+  /* --main-color: #26528C;
+  --color-theme-1: #3C92A6;
+  --color-theme-2: #F2D399;
+  --color-theme-3: #D9AB73;
+  --color-theme-4: #A67665; */
+}
+.btn-col0, .bg-col0 {
+    background-color: var(--main-color);
+  }
+  .btn-col1, .bg-col1 {
+    background-color: var(--color-theme-1);
+  }
+  .btn-col2, .bg-col2 {
+    background-color: var(--color-theme-2);
+  }
+  .btn-col3, .bg-col3 {
+    background-color: var(--color-theme-3);
+  }
+  .btn-col4, .bg-col4 {
+    background-color: var(--color-theme-4);
+  }
+
+  .profile-cards >div {
+    background-color: var(--color-theme-5);
+  }
+  .card-body {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 250px;
+    /* background-color: var(--main-color); */
+  }
+  .card-buttons a {
+    background-color: var(--color-theme-1);
+  }
+  .card-buttons form button {
+    background-color: var(--color-theme-2);
+  }
+  .card-text {
+    overflow: auto;
+  }
+  .card-footer {
+    padding: 5px 15px;
+    background-color: var(--color-theme-1);
+  }
+  .card {
+    border: 0px;
+    border-radius: 0px;
+    overflow: hidden;
+  }
+  .card:after {
+    content: "";
+    position:absolute;
+    margin:-15px;
+    width:30px;
+    height:30px;
+    transform:rotate(45deg);
+    background-color:var(--color-theme-5); /* to see where it is */
+    /* box-shadow: 0 0 0 15px #522d5b; */
+  }
+  
+  
+  /* LOGIN / SIGN UP FORMS */
+  #form h2, #login-form h2 {
+    font-weight: 700;
+  }
+  .trav-card {
+    width: 35%;
+    margin: auto;
+    padding: 20px;
+    border: 1px solid var(--color-theme-4);
+    box-shadow: 2px 2px 5px var(--color-theme-2);
+  }
+  .trav-card form {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+  }
+  .trav-card form input {
+    width: 70%;
+    border: 0px solid var(--color-theme-2);
+    padding: 2px 5px;
+    border-radius: 4px;
+  }
+  

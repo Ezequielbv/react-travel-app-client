@@ -3,6 +3,7 @@ import React, { useState, useEffect, useContext } from "react";
 import { LocationFormContext } from "../../context/location-form.context";
 import { Dimmer, Loader }   from 'semantic-ui-react';
 import CountryInfo from "../../components/CountryInfo/CountryInfo";
+import GetWeather from "../../components/LocationBoard/GetWeather";
 import axios          from 'axios';
 
 const DB_BE_URL = 'http://localhost:5005';
@@ -28,6 +29,7 @@ function ProfilePage() {
           return (
             <>
               <CountryInfo country={country}/>
+              {/* <GetWeather country={ country }/> */}
             </>
           )
         })}
