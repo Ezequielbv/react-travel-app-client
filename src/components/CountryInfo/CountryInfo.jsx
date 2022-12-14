@@ -1,9 +1,13 @@
+import './CountryInfo.css';
 import React, { useState, useEffect, useContext } from "react";
 import { Dimmer, Loader }   from 'semantic-ui-react';
+import { Link, useNavigate } from "react-router-dom";
+import AddNote from '../AddNote/AddNote';
+import NoteCard from "../NoteCard/NoteCard";
 import axios from 'axios';
 
 const COUNTRY_API_URL = 'https://restcountries.com/v3.1';
-// const DB_BE_URL = 'http://localhost:5005';
+const DB_BE_URL = 'http://localhost:5005';
 
 
 function CountryInfo({ country }) {
@@ -11,6 +15,10 @@ function CountryInfo({ country }) {
     // console.log("countryinfo", country)
     const [countryData, setCountryData] = useState("");
     const [fetching, setFetching]       = useState(true);
+
+    const [location, setLocation] = useState(null);
+
+    const navigate = useNavigate();
 
     useEffect(() => {
     axios.get(`${COUNTRY_API_URL}/name/${countryInfo}`)
@@ -20,6 +28,36 @@ function CountryInfo({ country }) {
         });
         }, []);
     // countryData && console.log("axios country", countryData)
+
+
+    //get Location iD
+    const getLocation = () => {
+        axios
+          .get(`${DB_BE_URL}/api/locations/${country._id}`)
+          .then((response) => {
+              const oneLocation = response.data;
+            //   console.log("HERE FE", oneLocation);
+              setLocation(oneLocation);
+            })
+          .catch((error) => console.log(error));
+      };
+      useEffect(()=> {
+        getLocation();
+      }, [] );
+
+
+    const deleteLocation = () => {
+        // Make a DELETE request to delete the project
+        axios
+          .delete(`${DB_BE_URL}/api/locations/${country._id}`)
+          .then(() => {
+              console.log("deleted: ", country._id)
+            // Once the delete request is resolved successfully
+            // navigate back to the list of projects.
+            navigate("/home");
+          })
+          .catch((err) => console.log(err));
+      };
 
     // {countryData?
         return countryData ? (
@@ -32,13 +70,13 @@ function CountryInfo({ country }) {
                             {country.city}
                         </button>
                         </h2>
-                        {/* <Link to={`${DB_BE_URL}/api/location/${country._id}`}><button className="btn btn-danger">X</button></Link> */}
+                        <button className="btn btn-danger" onClick={deleteLocation}>X</button>
                     </div>
                     <div id="collapseTwo" className="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
                         <div className="card-body">
                         
                         <div className='countryInfo'>
-                            <p>Common name: { Object.entries(countryData[0].name.nativeName)[0][1].common }</p>
+                            <p>Country's native name: { Object.entries(countryData[0].name.nativeName)[0][1].common }</p>
                             <p>Capital: { countryData[0].capital }</p>  
                             <p>Currency: {Object.entries(countryData[0].currencies)[0][1].name}</p>
                             <p>Languages: {Object.entries(countryData[0].languages).map(el => {
@@ -48,6 +86,12 @@ function CountryInfo({ country }) {
                                 })}</p> 
                         </div>
                         </div>
+                        <section className="notes-section d-flex justify-content-center">
+                            <AddNote refreshLocation={getLocation} locationId={country._id} />
+                            <div className="notes-list d-flex justify-content-center">
+                            { location && location.notes.map((note) => <NoteCard note={note} refreshLocation={getLocation} key={note._id} {...note} /> )} 
+                            </div>
+                        </section>
                     </div>
                 </div>
             </>

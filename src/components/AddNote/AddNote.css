@@ -1,0 +1,13 @@
+.add-note {
+    padding: 20px;
+    border: 1px solid grey;
+}
+.form-note-wrapper{}
+
+.form-note-content {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+.form-note-content.form-title{}
+.form-note-content.form-description{}
