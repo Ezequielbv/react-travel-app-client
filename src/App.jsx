@@ -9,9 +9,10 @@ import IsPrivate                  from "./components/IsPrivate/IsPrivate";
 import IsAnon                     from "./components/IsAnon/IsAnon";
 import GetWeather                 from './components/LocationBoard/GetWeather';
 import Forecast                   from "./components/Forecast/Forecast";
-import Profile                   from "./pages/ProfilePage/ProfilePage";
+import Profile                    from "./pages/ProfilePage/ProfilePage";
 import GenerateMap                from './components/GenerateMap/GenerateMap';
 import LocationForm               from "./pages/LocationForm/LocationForm";
+import EditNote                   from "./pages/EditNote/EditNote";
 
 function App() {
   return (
@@ -67,6 +68,7 @@ function App() {
             <LocationForm />
           }
         />
+        <Route exact path="/notes/edit/:noteId" element={<EditNote />} />
       </Routes>
     </div>
   );
