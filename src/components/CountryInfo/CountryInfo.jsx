@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useContext } from "react";
+import React, { useState, useEffect } from "react";
 import { Dimmer, Loader }   from 'semantic-ui-react';
 import axios from 'axios';
 

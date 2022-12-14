@@ -17,6 +17,9 @@ function WeatherProviderWrapper(props) {
     const [data, setData]                 = useState(undefined);
     
     useEffect(() => {
+      if (!weatherLat || !weatherLong) {
+        return
+      }
       const weatherApiCall = () => {
           axios
           .get(`${WEATHER_API_URL}/weather/?lat=${weatherLat}&lon=${weatherLong}&units=metric&appid=${process.env.REACT_APP_API_KEY}`)
