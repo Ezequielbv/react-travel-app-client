@@ -20,7 +20,7 @@ function ForecastInfo({ coordinates }) {
     const forecastDays = WEEK_DAYS.slice(dayInAWeek, WEEK_DAYS.length).concat(WEEK_DAYS.slice(0, dayInAWeek));
 
     useEffect(() => {
-        axios.get(`${WEATHER_API_URL}/forecast?lat=${coordinates[0]}&lon=${coordinates[1]}&units=metric&appid=${process.env.REACT_APP_API_KEY}`)
+        axios.get(`${WEATHER_API_URL}/forecast?lat=${coordinates[1]}&lon=${coordinates[0]}&units=metric&appid=${process.env.REACT_APP_API_KEY}`)
             .then((response) => {
                 setForecastData(response.data);
             })

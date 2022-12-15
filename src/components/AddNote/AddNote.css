@@ -1,11 +1,13 @@
 .notes-section {
+    width: 70%;
     margin: 15px 0;
-    background-color: var(--color-theme-1);
     border-radius: 5px;
 }
 .add-note {
     padding: 20px;
+    background-color: var(--color-theme-1);
     border-right: 1px solid var(--color-theme-1);
+    text-align: left;
 }
 .form-note-wrapper{
 

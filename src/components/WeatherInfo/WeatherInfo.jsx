@@ -10,7 +10,7 @@ function WeatherInfo({ coordinates }) {
     const [weatherData, setWeatherData] = useState();
     
     useEffect(() => {
-        axios.get(`${WEATHER_API_URL}/weather/?lat=${coordinates[0]}&lon=${coordinates[1]}&units=metric&appid=${process.env.REACT_APP_API_KEY}`)
+        axios.get(`${WEATHER_API_URL}/weather/?lat=${coordinates[1]}&lon=${coordinates[0]}&units=metric&appid=${process.env.REACT_APP_API_KEY}`)
             .then((response) => {
                 setWeatherData(response.data);
             })

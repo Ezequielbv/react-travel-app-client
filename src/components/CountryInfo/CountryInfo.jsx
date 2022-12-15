@@ -112,7 +112,7 @@ function CountryInfo({ country }) {
             <ForecastInfo coordinates={ country.coordinates }/>
           </section>
 
-          <section className="notes-section d-flex justify-content-center">
+          <section className="notes-section d-flex justify-content-start">
             <AddNote refreshLocation={getLocation} locationId={country._id} />
             <div className="notes-list d-flex justify-content-center">
               {location &&
