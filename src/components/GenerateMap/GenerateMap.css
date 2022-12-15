@@ -6,6 +6,9 @@
   height: 100vh;
   width: auto
 }
+#mapbox-all .mapboxgl-popup-content h3{
+  font-family: 'Shadows Into Light', cursive!important;
+}
 
 .sidebarStyle {
   display: inline-block;

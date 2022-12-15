@@ -54,7 +54,7 @@ function GenerateMapUser() {
     }, [user]);
 
     return (
-        <div>
+        <div className="container">
             <div id="mapbox-user" />
         </div>
     )

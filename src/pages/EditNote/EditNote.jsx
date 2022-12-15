@@ -11,6 +11,9 @@ function EditNote(props) {
   
   const { noteId } = useParams();
   const navigate = useNavigate();
+
+  // const {infoNote} = props.params();
+  // console.log(title)
   
   useEffect(() => {
     axios
@@ -21,9 +24,9 @@ function EditNote(props) {
         setDescription(oneNote.description);
       })
       .catch((error) => console.log(error));
+      
+    }, [noteId]);
     
-  }, [noteId]);
-  
 
   const handleFormSubmit = (e) => {
     e.preventDefault();
@@ -37,26 +40,31 @@ function EditNote(props) {
   };
   
   return (
-    <div className="EditNote">
-      <h3>Edit the Note</h3>
+    <div className="EditNote trav-card mt-5">
+      <h1>Edit the Note</h1>
 
-      <form onSubmit={handleFormSubmit}>
-        <label>Title:</label>
-        <input
-          type="text"
-          name="title"
-          value={title}
-          onChange={(e) => setTitle(e.target.value)}
-        />
+      <form onSubmit={handleFormSubmit} className="d-flex">
+        <div className="edit-note-inputs">
+          <label>Title:</label>
+          <input
+            type="text"
+            name="title"
+            value={title}
+            onChange={(e) => setTitle(e.target.value)}
+          />
+        </div>
         
-        <label>Description:</label>
-        <textarea
-          name="description"
-          value={description}
-          onChange={(e) => setDescription(e.target.value)}
-        />
-
-        <button type="submit">Update Note</button>
+        <div className="edit-note-inputs">
+          <label>Description:</label>
+          <textarea
+            name="description"
+            value={description}
+            onChange={(e) => setDescription(e.target.value)}
+          />
+        </div>
+        <hr className="w-100"/>
+        <hr className="w-100"/>
+        <div className="edit-note-button mt-4"><button type="submit" className="btn text-white bg-col1">Update Note</button></div>
       </form>
 
     </div>

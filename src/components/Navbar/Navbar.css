@@ -14,3 +14,18 @@ nav.navbar {
     /* background-color: #2081c3; */
     background-color: var(--color-theme-4);
 }
+
+.navbar-nav {
+    align-items: center;
+}
+.navbar-nav span {
+    margin-right: 40px;
+    font-family: 'Shadows Into Light';
+}
+
+.profile-btn {
+    /* border: 1px solid white; */
+}
+.logout-btn {
+    height: fit-content;
+}

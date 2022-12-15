@@ -60,10 +60,10 @@ function CountryInfo({ country }) {
 
   return countryData ? (
     <>
-      <div key={country._id} className="card-header d-flex justify-content-between" id={`heading${country._id}`}>
+      <div key={country._id} className="card-header d-flex justify-content-between bg-col1" id={`heading${country._id}`}>
           <h2 className="mb-0">
             <button
-              className="btn btn-link btn-block text-left collapsed"
+              className="btn btn-link btn-block text-left text-white collapsed title-btn-name"
               type="button"
               data-toggle="collapse"
               data-target={`#collapse${country._id}`}
@@ -73,7 +73,7 @@ function CountryInfo({ country }) {
               {country.city}
             </button>
           </h2>
-          <button className="btn btn-danger btn-sm" onClick={deleteLocation}>
+          <button className="btn bg-col0 btn-sm title-btn-delete" onClick={deleteLocation}>
             X
           </button>
         </div>
@@ -84,7 +84,7 @@ function CountryInfo({ country }) {
           aria-labelledby={`heading${country._id}`}
           data-parent="#accordionExample"
         >
-          <div className="card-body flex-row flex-wrap">
+          <div className="card-body flex-row flex-wrap country-info-fullcard">
             <div className="countryInfo">
               <p>
                 Country's native name:<br/>

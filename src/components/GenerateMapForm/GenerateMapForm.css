@@ -1,14 +1,19 @@
+.form-page-map.map-container{
+  width: 60%;
+  margin: 30px;
+}
+
 #mapbox-home {
-    position: absolute;
-    top: 45vh;
-    bottom: 0;
-    left: 50vh;
-    right: 0;
-    height: 50vh;
-    width: 80vh
-  }
-  
-  .sidebarStyle {
+    /* position: absolute; */
+    /* top: 45vh; */
+    /* bottom: 0; */
+    /* left: 50vh; */
+    /* right: 0; */
+    height: 60vh;
+    width: 100%;
+}
+
+.sidebarStyle {
     display: inline-block;
     position: absolute;
     top: 0;
@@ -19,9 +24,9 @@
     z-index: 1 !important;
     padding: 6px;
     font-weight: bold;
-  }
-  
-  .marker {
+}
+
+.marker {
     background-image: url("../../../public/images/airfield.svg");
     fill:           #53407E;
     background-size:  cover;
@@ -29,13 +34,13 @@
     height:           30px;
     border-radius:    10%;
     cursor:           pointer;
-  }
-  
-  .mapboxgl-popup {
+}
+
+.mapboxgl-popup {
     max-width:        200px;
-  }
-  
-  .mapboxgl-popup-content h3 {
+}
+
+.mapboxgl-popup-content h3 {
     text-align:       center;
     font-size:        22px;
   }

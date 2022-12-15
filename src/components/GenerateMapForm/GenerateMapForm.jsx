@@ -42,7 +42,7 @@ function GenerateMapForm() {
     }, [latHomeMap, longHomeMap]);
 
     return (
-        <div>
+        <div className="form-page-map map-container">
             <div id="mapbox-home" />
         </div>
     )
