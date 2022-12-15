@@ -1,26 +1,26 @@
 import "./CountryInfo.css";
-import React, { useState, useEffect, useContext } from "react";
-import { Dimmer, Loader } from "semantic-ui-react";
-import { Link, useNavigate } from "react-router-dom";
-import AddNote from "../AddNote/AddNote";
-import NoteCard from "../NoteCard/NoteCard";
-import VaccinationReco from "../VaccinationReco/VaccinationReco";
-import whoVaccination from "../../who-vaccination.json";
-import axios from "axios";
+import React, { useState, useEffect, useContext }   from "react";
+import { Dimmer, Loader }                           from "semantic-ui-react";
+import { Link, useNavigate }                        from "react-router-dom";
+import AddNote                                      from "../AddNote/AddNote";
+import NoteCard                                     from "../NoteCard/NoteCard";
+import VaccinationReco                              from "../VaccinationReco/VaccinationReco";
+import whoVaccination                               from "../../who-vaccination.json";
+import axios                                        from "axios";
 
-const COUNTRY_API_URL = "https://restcountries.com/v3.1";
-const DB_BE_URL = "http://localhost:5005";
+const COUNTRY_API_URL   = "https://restcountries.com/v3.1";
+const DB_BE_URL         = "http://localhost:5005";
 
 function CountryInfo({ country }) {
   let countryInfo = country.city.split(", ").slice(-1);
-  console.log(countryInfo)
+  //console.log(countryInfo)
   const [countryData, setCountryData] = useState("");
-  const [fetching, setFetching] = useState(true);
-
-  const [location, setLocation] = useState(null);
-  const [vaxList, setvaxList] = useState(whoVaccination);
-  //   console.log("vax", Object.keys(vaxList[0]));
+  const [fetching, setFetching]       = useState(true);
+  const [location, setLocation]       = useState(null);
+  const [vaxList, setvaxList]         = useState(whoVaccination);
+  //console.log("vax", Object.keys(vaxList[0]));
   const vaxArr = Object.keys(vaxList[0]);
+  console.log("Vaccination array:", vaxArr)
 //   vaxArr.map((vaxCountry) => {
 //     if(vaxCountry == countryInfo) {
 //         console.log('pass');
@@ -59,7 +59,7 @@ function CountryInfo({ country }) {
         console.log("deleted: ", country._id);
         // Once the delete request is resolved successfully
         // navigate back to the list of projects.
-        navigate("/home");
+        navigate("/profile");
       })
       .catch((err) => console.log(err));
   };
@@ -127,8 +127,8 @@ function CountryInfo({ country }) {
 
             {vaxArr.map((vaxCountry => {
                 if(vaxCountry === countryInfo[0]){
-                    console.log("HERE LOG", vaxList[0])
-                    console.log("HERE LOG", countryInfo[0])
+                    /* console.log("HERE LOG", vaxList[0])
+                    console.log("HERE LOG", countryInfo[0]) */
                     return(
                         <>
                           <section className="vaccination-reco">
