@@ -1,14 +1,12 @@
 import React, { useContext, useEffect } from 'react';
-import mapboxgl from 'mapbox-gl';
 import { LocationFormContext } from '../../context/location-form.context';
-import MapboxGeocoder from '@mapbox/mapbox-gl-geocoder';
+import mapboxgl from 'mapbox-gl';
 import '@mapbox/mapbox-gl-geocoder/dist/mapbox-gl-geocoder.css';
-import './GenerateMapHome.css'
+import './GenerateMapForm.css'
 
-/*  Declare tokens and API URL  */
 mapboxgl.accessToken = process.env.REACT_APP_MAPBOX_API_ACCESS_TOKEN;
 
-function GenerateMapHome() {
+function GenerateMapForm() {
     const { latHomeMap, longHomeMap } = useContext(LocationFormContext);
 
     useEffect(() => {
@@ -22,10 +20,12 @@ function GenerateMapHome() {
             const mapboxMap = new mapboxgl.Map({
                 container: "mapbox-home",
                 style: "mapbox://styles/micaela-rosadio/clbjpb0wp006c14r3d53924fz",
-                center: [latHomeMap, longHomeMap],
+                center: [13.4, 52.5],
                 zoom: 5
             })
-            console.log(mapboxMap)
+            mapboxMap.flyTo(
+                { center: [latHomeMap, longHomeMap], zoom: 12 }
+            )
             mapboxMap.addControl(new mapboxgl.NavigationControl());
             mapboxMap.addControl(
                 new mapboxgl.GeolocateControl({
@@ -38,16 +38,6 @@ function GenerateMapHome() {
                     showUserHeading: true
                 })
             );
-            // Add the control to the map.
-           const geocoder = mapboxMap.addControl(
-                new MapboxGeocoder({
-                    accessToken: mapboxgl.accessToken,
-                    mapboxgl: mapboxgl,
-                    language:       'en-EN',
-                })
-            );
-            console.log(geocoder)
-
         }
         initializeMap();
     }, [latHomeMap, longHomeMap]);
@@ -59,4 +49,4 @@ function GenerateMapHome() {
     )
 }
 
-export default GenerateMapHome;
+export default GenerateMapForm;

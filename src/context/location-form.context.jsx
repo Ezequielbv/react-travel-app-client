@@ -29,8 +29,8 @@ function LocationFormProviderWrapper(props) {
         setCity(suggestion.place_name);
         setCountry(suggestion.place_name.split(', ')[suggestion.place_name.split(', ').length - 1])
         setCoordinates(suggestion.center);
-        setLatHomeMap(suggestion.center[1]);
-        setLongHomeMap(suggestion.center[0]);
+        setLatHomeMap(suggestion.center[0]);
+        setLongHomeMap(suggestion.center[1]);
     };
     const navigate = useNavigate();
     const handleSubmit = event => {

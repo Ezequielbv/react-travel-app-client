@@ -12,8 +12,9 @@ import Forecast from "./components/Forecast/Forecast";
 import Profile from "./pages/ProfilePage/ProfilePage";
 import GenerateMap from './components/GenerateMap/GenerateMap';
 import GenerateMapUser from "./components/GenerateMapUser/GenerateMapUser";
-import GenerateMapHome from "./components/GenerateMapHome/GenerateMapHome";
+import GenerateMapForm from "./components/GenerateMapForm/GenerateMapForm";
 import LocationForm from "./pages/LocationForm/LocationForm";
+import WeatherInfo from "./components/WeatherInfo/WeatherInfo";
 
 function App() {
   return (
@@ -26,7 +27,6 @@ function App() {
           element={
             <div className="home-container">
               <HomePage />
-              <GenerateMapHome />
             </div>
           }
         />
@@ -82,8 +82,14 @@ function App() {
           element={
             <div className="form-container">
               <LocationForm />
-              <GenerateMapHome />
+              <GenerateMapForm />
             </div>
+          }
+        />
+        <Route 
+          path="/test-weather"
+          element={
+            <WeatherInfo />
           }
         />
         {/* <Route
