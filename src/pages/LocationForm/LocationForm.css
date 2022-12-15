@@ -20,14 +20,15 @@
 .form-content-city>div {
     position: absolute;
     padding: 5px;
-    border: 1px solid var(--main-color);
+    border: 1px solid var(--color-theme-1);
     width: 30vw;
-    background-color: var(--color-theme-1);
+    background-color: var(--color-theme-3);
     color: var(--color-theme-2);
 }
 .form-content-city>div>div {
     padding: 5px;
     cursor: pointer;
+    border-bottom: 1px solid var(--color-theme-1);
 }
 .form-content-city>div>div:hover {
     background-color: var(--color-theme-5);
