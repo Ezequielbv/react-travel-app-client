@@ -14,9 +14,20 @@ function Navbar() {
       <Link to="/" className="nav-link text-white">
         <button>Home</button>
       </Link>
-      <Link to="/form" className="nav-link text-white">
-        <button>New Location</button>
-      </Link>
+      {isLoggedIn && (
+        <>
+          <Link to="/form" className="nav-link text-white">
+            <button className="btn text-white">New Location</button>
+          </Link>
+        </>
+      )}
+      {!isLoggedIn && (
+        <>
+          <Link to="/login" className="nav-link text-white">
+            <button className="btn text-white">New Location</button>
+          </Link>
+        </>
+      )}
       <Link to="/my-map" className="nav-link text-white">
         <button className="btn text-white">Fly to my locations!</button>
       </Link>
@@ -29,10 +40,10 @@ function Navbar() {
           <>
             <span>Hello {user && user.name}</span>
 
-            <button className="btn btn-secondary" onClick={logOutUser}>Logout</button>
+            <button className="btn btn-secondary logout-btn" onClick={logOutUser}>Logout</button>
 
             <Link to="/profile" className="nav-link">
-              <button className="btn text-white">Profile</button>
+              <button className="btn text-white profile-btn bg-col1">Profile</button>
               {/* <img src="https://picsum.photos/id/402/200/300" style={{ width: 50, height: 50, borderRadius: 25}} alt="profile" /> */}
             </Link>
           </>
@@ -42,11 +53,11 @@ function Navbar() {
           <>
             <Link to="/signup" className="nav-link">
               {" "}
-              <button className="btn text-white">Sign Up</button>{" "}
+              <button className="btn text-white bg-col1">Sign Up</button>{" "}
             </Link>
             <Link to="/login" className="nav-link">
               {" "}
-              <button className="btn text-white">Login</button>{" "}
+              <button className="btn text-white bg-col1">Login</button>{" "}
             </Link>
           </>
         )}

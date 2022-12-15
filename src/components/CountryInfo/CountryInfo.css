@@ -1,12 +1,28 @@
+
 .notes-section {
     border: 1px dashed grey;
 }
 
-.card-body {
+.country-info-fullcard {
     height: auto;
-    align-items: center;    
+    margin-bottom: 20px;
+    align-items: center; 
+    background-color: var(--color-theme-5);
+    border-left: 1px solid var(--color-theme-1);
+    border-right: 1px solid var(--color-theme-1);
+    border-bottom: 1px solid var(--color-theme-1);  
 }
-
+button.title-btn-name{
+    font-family: 'Pacifico';
+    font-size: 24px;
+}
+.card-header .title-btn-delete {
+    height: fit-content;
+}
+.card-header .title-btn-delete:hover {
+    background-color: red;
+    color: white;
+}
 .countryInfo {
     width: 30%;
     padding: 30px 20px;

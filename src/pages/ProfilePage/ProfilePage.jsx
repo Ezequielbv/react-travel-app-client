@@ -26,8 +26,8 @@ function ProfilePage() {
   
   return (
     <>
-      <div>
-        <h1>Profile page</h1>
+      <div className="container">
+        <h1>Your Profile Page, {user.name}</h1>
 
         <div class="accordion" id="accordionExample">
         {countries?.map((country) => {

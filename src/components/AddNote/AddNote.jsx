@@ -55,7 +55,7 @@ function AddNote(props) {
             />
         </div>
 
-        <button className="btn btn-primary mt-3" type="submit">Add Note</button>
+        <button className="btn mt-3 text-white bg-col6" type="submit">Add Note</button>
       </form>
     </div>
   );
