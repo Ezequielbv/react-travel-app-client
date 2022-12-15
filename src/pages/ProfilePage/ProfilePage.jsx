@@ -5,7 +5,7 @@ import CountryInfo                    from "../../components/CountryInfo/Country
 // import ForecastInfo                   from "../../components/ForecastInfo/ForecastInfo";
 import axios                          from 'axios';
 
-const DB_BE_URL = 'http://localhost:5005';
+// const DB_BE_URL = 'http://localhost:5005';
 
 function ProfilePage() {
   const [countries, setCoutries] = useState();
@@ -13,7 +13,7 @@ function ProfilePage() {
   
   
   useEffect(() => {
-    axios.get(`${DB_BE_URL}/api/profile`)
+    axios.get(`${process.env.REACT_APP_API_URL}/api/profile`)
     .then((response) =>{
       setCoutries(response.data.location);
     })

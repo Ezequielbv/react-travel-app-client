@@ -7,7 +7,7 @@ import axios                             from "axios";
 import useInput                          from "../components/InputField/UseInput";
 
 const LocationFormContext = React.createContext();
-const DB_LOCATION         = 'http://localhost:5005';
+// const DB_LOCATION         = 'http://localhost:5005';
 
 function LocationFormProviderWrapper(props) {
     const { setLat, setLong }               = useContext(ForecastContext);
@@ -45,7 +45,7 @@ function LocationFormProviderWrapper(props) {
         };
         console.log("info submitted", requestBody);
 
-        axios.post(`${DB_LOCATION}/api/form`, requestBody)
+        axios.post(`${process.env.REACT_APP_API_URL}/api/form`, requestBody)
           .then((response) => {
               console.log("response from axios form: ", response);
               setLat(requestBody.coordinates[1]);

@@ -4,7 +4,7 @@ import axios from 'axios';
 import './GenerateMap.css'
 
 /*  Declare tokens and API URL  */
-const DB_LOCATION = 'http://localhost:5005/api';
+// const DB_LOCATION = 'http://localhost:5005/api';
 mapboxgl.accessToken = process.env.REACT_APP_MAPBOX_API_ACCESS_TOKEN;
 
 function GenerateMap() {
@@ -16,7 +16,7 @@ function GenerateMap() {
       zoom: 4
     })
     /*  Get coordinates of all users  */
-    axios.get(`${DB_LOCATION}/user-coordinates`)
+    axios.get(`${process.env.REACT_APP_API_URL}/api/user-coordinates`)
       .then(location => {
         location.data.coordinates.forEach((coordinate) => {
           const el = document.createElement('div');
