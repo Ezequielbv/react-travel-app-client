@@ -8,9 +8,12 @@ import Navbar                     from "./components/Navbar/Navbar";
 import IsPrivate                  from "./components/IsPrivate/IsPrivate";
 import IsAnon                     from "./components/IsAnon/IsAnon";
 import GetWeather                 from './components/LocationBoard/GetWeather';
+import GenerateMapUser            from './components/GenerateMapUser/GenerateMapUser'
 import Forecast                   from "./components/Forecast/Forecast";
 import Profile                    from "./pages/ProfilePage/ProfilePage";
 import GenerateMap                from './components/GenerateMap/GenerateMap';
+import GenerateMapForm            from './components/GenerateMapForm/GenerateMapForm';
+import WeatherInfo                from './components/WeatherInfo/WeatherInfo';
 import LocationForm               from "./pages/LocationForm/LocationForm";
 import EditNote                   from "./pages/EditNote/EditNote";
 
