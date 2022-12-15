@@ -4,12 +4,15 @@ import { LocationFormContext } from "../../context/location-form.context";
 import { Dimmer, Loader }   from 'semantic-ui-react';
 import CountryInfo from "../../components/CountryInfo/CountryInfo";
 import GetWeather from "../../components/LocationBoard/GetWeather";
+// import whovaccination from '../../who-vaccination.json';
 import axios          from 'axios';
 
 const DB_BE_URL = 'http://localhost:5005';
 
 function ProfilePage() {
   const [countries, setCoutries] = useState();
+  // const [vaxList, setVaxList] = useState(whovaccination);
+  
   
   useEffect(() => {
     axios.get(`${DB_BE_URL}/api/profile`)
@@ -29,7 +32,7 @@ function ProfilePage() {
           return (
             <>
               <CountryInfo country={country}/>
-              {/* <GetWeather country={ country }/> */}
+              {/* <GetWeather coordinates={ country.coordinates }/> */}
             </>
           )
         })}

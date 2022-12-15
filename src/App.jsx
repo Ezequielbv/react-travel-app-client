@@ -14,7 +14,7 @@ import GenerateMap                from './components/GenerateMap/GenerateMap';
 import LocationForm               from "./pages/LocationForm/LocationForm";
 import EditNote                   from "./pages/EditNote/EditNote";
 
-function App() {
+function App() {  
   return (
     <div className="App">
       <Navbar />
