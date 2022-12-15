@@ -6,7 +6,7 @@
   font-family: 'Lane';
   src: url('/public/fonts/LANE_E') format('woff');
 } */
-/* 
+
 :root {
   --main-color: #FBEDD4;
   --color-theme-1: #FFB95F;
@@ -14,9 +14,10 @@
   --color-theme-3: #B3DBCD;
   --color-theme-4: #227469;
   --color-theme-5: #FCF6E3;
-} */
+}
 
 body {
   margin: 0;
+  background: var(--main-color)!important;
 }
 
