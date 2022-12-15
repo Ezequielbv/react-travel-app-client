@@ -30,8 +30,8 @@ function ProfilePage() {
           return (
             <>
               <CountryInfo country={country}/>
-              <WeatherInfo coordinates={ country.coordinates }/> 
-              <ForecastInfo coordinates={ country.coordinates }/>
+              {/* <WeatherInfo coordinates={ country.coordinates }/> 
+              <ForecastInfo coordinates={ country.coordinates }/> */}
             </>
           )
         })}
