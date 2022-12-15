@@ -17,34 +17,39 @@ function Navbar() {
       <Link to="/form" className="nav-link text-white">
         <button>New Location</button>
       </Link>
-      
-      <div class="navbar-nav ml-auto flex-row">
-      {isLoggedIn && (
-        <>
-          <span>Hello {user && user.name}</span>
+      <Link to="/my-map" className="nav-link text-white">
+        <button className="btn text-white">Fly to my locations!</button>
+      </Link>
+      <Link to="/all-users-map" className="nav-link text-white">
+        <button className="btn text-white">Show all users locations</button>
+      </Link>
 
-          <button className="btn btn-secondary" onClick={logOutUser}>Logout</button>
+      <div className="navbar-nav ml-auto flex-row">
+        {isLoggedIn && (
+          <>
+            <span>Hello {user && user.name}</span>
 
-          <Link to="/profile" className="nav-link">
-            <button className="btn text-white">Profile</button>
-            {/* <img src="https://picsum.photos/id/402/200/300" style={{ width: 50, height: 50, borderRadius: 25}} alt="profile" /> */}
-          </Link>
+            <button className="btn btn-secondary" onClick={logOutUser}>Logout</button>
 
-        </>
-      )}
+            <Link to="/profile" className="nav-link">
+              <button className="btn text-white">Profile</button>
+              {/* <img src="https://picsum.photos/id/402/200/300" style={{ width: 50, height: 50, borderRadius: 25}} alt="profile" /> */}
+            </Link>
+          </>
+        )}
 
-      {!isLoggedIn && (
-        <>
-          <Link to="/signup" className="nav-link">
-            {" "}
-            <button className="btn text-white">Sign Up</button>{" "}
-          </Link>
-          <Link to="/login" className="nav-link">
-            {" "}
-            <button className="btn text-white">Login</button>{" "}
-          </Link>
-        </>
-      )}
+        {!isLoggedIn && (
+          <>
+            <Link to="/signup" className="nav-link">
+              {" "}
+              <button className="btn text-white">Sign Up</button>{" "}
+            </Link>
+            <Link to="/login" className="nav-link">
+              {" "}
+              <button className="btn text-white">Login</button>{" "}
+            </Link>
+          </>
+        )}
       </div>
     </nav>
   );

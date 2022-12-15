@@ -20,7 +20,14 @@ function App() {
       <Navbar />
 
       <Routes>
-        <Route path="/" element={<HomePage />} />
+        <Route
+          path="/"
+          element={
+            <div className="home-container">
+              <HomePage />
+            </div>
+          }
+        />
 
         <Route
           path="/profile"
@@ -47,25 +54,40 @@ function App() {
           }
         />
         <Route
-          path="/test" 
-          element={ 
+          path="/test"
+          element={
             <div className="container">
               <Profile />
               <GetWeather />
               <Forecast />
             </div>
           }
-        /> 
-        <Route 
-          path="/map"
+        />
+        <Route
+          path="/my-map"
+          element={
+            <GenerateMapUser />
+          }
+        />
+        <Route
+          path="/all-users-map"
           element={
             <GenerateMap />
           }
         />
-        <Route 
+        <Route
           path="/form"
           element={
-            <LocationForm />
+            <div className="form-container">
+              <LocationForm />
+              <GenerateMapForm />
+            </div>
+          }
+        />
+        <Route 
+          path="/test-weather"
+          element={
+            <WeatherInfo />
           }
         />
         <Route exact path="/notes/edit/:noteId" element={<EditNote />} />
