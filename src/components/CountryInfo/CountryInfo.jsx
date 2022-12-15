@@ -8,7 +8,6 @@ import VaccinationReco from "../VaccinationReco/VaccinationReco";
 import whoVaccination from "../../who-vaccination.json";
 import axios from "axios";
 
-
 const COUNTRY_API_URL = "https://restcountries.com/v3.1";
 const DB_BE_URL = "http://localhost:5005";
 
@@ -60,58 +59,48 @@ function CountryInfo({ country }) {
   return countryData ? (
     <>
       {/* <h2>HELLO</h2> */}
-      {/* <div className=""> */}
-        <div key={country._id} className="card-header d-flex justify-content-between" id={`heading${country._id}`}>
+      {/* <div key={country._id} className="card"> */}
+        <div className="card-header" id="headingTwo">
           <h2 className="mb-0">
             <button
               className="btn btn-link btn-block text-left collapsed"
               type="button"
               data-toggle="collapse"
-              data-target={`#collapse${country._id}`}
+              data-target="#collapseTwo"
               aria-expanded="false"
-              aria-controls={`collapse${country._id}`}
+              aria-controls="collapseTwo"
             >
               {country.city}
             </button>
           </h2>
-          <button className="btn btn-danger btn-sm" onClick={deleteLocation}>
+          <button className="btn btn-danger" onClick={deleteLocation}>
             X
           </button>
         </div>
         <div
-          id={`collapse${country._id}`}
+          id="collapseTwo"
           className="collapse"
-          aria-labelledby={`heading${country._id}`}
+          aria-labelledby="headingTwo"
           data-parent="#accordionExample"
         >
-          <div className="card-body flex-row flex-wrap">
+          <div className="card-body">
             <div className="countryInfo">
               <p>
-                Country's native name:<br/>
-                <span>{Object.entries(countryData[0].name.nativeName)[0][1].common}</span>
+                Country's native name:{" "}
+                {Object.entries(countryData[0].name.nativeName)[0][1].common}
               </p>
-              <hr/>
-              <p>Capital: <br/><span>{countryData[0].capital}</span></p>
-              <hr/>
+              <p>Capital: {countryData[0].capital}</p>
               <p>
-                Currency: <br/><span>{Object.entries(countryData[0].currencies)[0][1].name}</span>
+                Currency: {Object.entries(countryData[0].currencies)[0][1].name}
               </p>
-              <hr/>
               <p>
-                Languages:<br/>
-                <ul>
+                Languages:{" "}
                 {Object.entries(countryData[0].languages).map((el) => {
                   return <li>{el[1]}</li>;
                 })}
-                </ul>
               </p>
             </div>
-          
-          <section className="weather-section d-flex">
-            <WeatherInfo coordinates={ country.coordinates }/> 
-            <ForecastInfo coordinates={ country.coordinates }/>
-          </section>
-
+          </div>
           <section className="notes-section d-flex justify-content-center">
             <AddNote refreshLocation={getLocation} locationId={country._id} />
             <div className="notes-list d-flex justify-content-center">
@@ -126,13 +115,12 @@ function CountryInfo({ country }) {
                 ))}
             </div>
           </section>
-
           {vaxList[countryInfo] &&
             <section className="vaccination-reco">
               <VaccinationReco vaxCountry={vaxList[countryInfo]} />
             </section>
           }
-          </div>
+        </div>
       {/* </div> */}
     </>
   ) : (
