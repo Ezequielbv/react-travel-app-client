@@ -1,4 +1,4 @@
-[{   
+{   
     "Afghanistan": { 
         "mandatory": [{"name": "Polio", "details": ""}],
         "recommendation": [{"name": "Malaria", "details": "Prevention in risk areas"} ]
@@ -176,4 +176,4 @@
         "mandatory": [{"name": "Yellow fever","details": "Proof of vaccination is required for all travellers aged 9 months or over."}],
         "recommendation": [{"name": "Malaria", "details": "Malaria risk due predominantly to P. falciparum exists throughout the year in the entire country. WHO recommended prevention: C."}]
     }    
-}]
+}
