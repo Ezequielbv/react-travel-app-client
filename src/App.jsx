@@ -1,20 +1,18 @@
 import "./App.css";
-import { Routes, Route } from "react-router-dom";
-import HomePage from "./pages/HomePage/HomePage";
-import ProfilePage from "./pages/ProfilePage/ProfilePage";
-import SignupPage from "./pages/SignupPage/SignupPage";
-import LoginPage from "./pages/LoginPage/LoginPage";
-import Navbar from "./components/Navbar/Navbar";
-import IsPrivate from "./components/IsPrivate/IsPrivate";
-import IsAnon from "./components/IsAnon/IsAnon";
-import GetWeather from './components/LocationBoard/GetWeather';
-import Forecast from "./components/Forecast/Forecast";
-import Profile from "./pages/ProfilePage/ProfilePage";
-import GenerateMap from './components/GenerateMap/GenerateMap';
-import GenerateMapUser from "./components/GenerateMapUser/GenerateMapUser";
-import GenerateMapForm from "./components/GenerateMapForm/GenerateMapForm";
-import LocationForm from "./pages/LocationForm/LocationForm";
-import WeatherInfo from "./components/WeatherInfo/WeatherInfo";
+import { Routes, Route }          from "react-router-dom";
+import HomePage                   from "./pages/HomePage/HomePage";
+import ProfilePage                from "./pages/ProfilePage/ProfilePage";
+import SignupPage                 from "./pages/SignupPage/SignupPage";
+import LoginPage                  from "./pages/LoginPage/LoginPage";
+import Navbar                     from "./components/Navbar/Navbar";
+import IsPrivate                  from "./components/IsPrivate/IsPrivate";
+import IsAnon                     from "./components/IsAnon/IsAnon";
+import GetWeather                 from './components/LocationBoard/GetWeather';
+import Forecast                   from "./components/Forecast/Forecast";
+import Profile                    from "./pages/ProfilePage/ProfilePage";
+import GenerateMap                from './components/GenerateMap/GenerateMap';
+import LocationForm               from "./pages/LocationForm/LocationForm";
+import EditNote                   from "./pages/EditNote/EditNote";
 
 function App() {
   return (
@@ -92,12 +90,7 @@ function App() {
             <WeatherInfo />
           }
         />
-        {/* <Route
-          path="/hometest"
-          element={
-            <GenerateMapHome />
-          }
-        /> */}
+        <Route exact path="/notes/edit/:noteId" element={<EditNote />} />
       </Routes>
     </div>
   );
