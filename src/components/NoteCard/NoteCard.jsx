@@ -5,14 +5,14 @@ import { Link, useNavigate } from "react-router-dom";
 const DB_BE_URL = "http://localhost:5005";
 
 function NoteCard({ title, description, _id, refreshLocation }) {
-  console.log("note", { title, description, _id })
+  // console.log("note", { title, description, _id })
   const navigate = useNavigate();
 
   const deleteNote = () => {
     axios
       .delete(`${DB_BE_URL}/api/notes/${_id}`)
       .then(() => {
-        console.log("deleted note: ", _id)
+        // console.log("deleted note: ", _id)
         refreshLocation();
         // navigate("/profile");
       })

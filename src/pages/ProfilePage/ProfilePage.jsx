@@ -7,6 +7,8 @@ const DB_BE_URL = 'http://localhost:5005';
 
 function ProfilePage() {
   const [countries, setCoutries] = useState();
+  // const [vaxList, setVaxList] = useState(whovaccination);
+  
   
   useEffect(() => {
     axios.get(`${DB_BE_URL}/api/profile`)
@@ -26,7 +28,7 @@ function ProfilePage() {
           return (
             <>
               <CountryInfo country={country}/>
-              {/* <GetWeather country={ country }/> */}
+              {/* <GetWeather coordinates={ country.coordinates }/> */}
             </>
           )
         })}

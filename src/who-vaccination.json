@@ -1,0 +1,179 @@
+[{   
+    "Afghanistan": { 
+        "mandatory": [{"name": "Polio", "details": ""}],
+        "recommendation": [{"name": "Malaria", "details": "Prevention in risk areas"} ]
+    },
+    "Albania": {
+        "mandatory": [{"name": "Yellow fewer", "details": "Required for travellers aged 1 year or over arriving from countries with risk of yellow fever transmission"}],
+        "recommendation": [{"name": "", "details": ""}]            
+    },
+    "Algeria": {
+        "mandatory": [{"name": "Yellow fewer", "details": "Required for travellers aged 9 months or over arriving from countries with risk of yellow fever transmission and for travellers having transited for more than 12 hours through an airport of a country with risk of yellow fever transmission."}],
+        "recommendation": [{"name": "", "details": ""}]
+    },
+    "Andorra": {
+        "mandatory": [{"name": "", "details": ""}] ,
+        "recommendation": [{"name": "", "details": ""}]
+    },
+    "Angola": {
+        "mandatory": [{"name": "Yellow fewer", "details": "Required for all travellers aged 9 months or over"}],
+        "recommendation": [{"name": "Malaria", "details": ""}]
+    },
+    "Antigua and Barbuda": {
+        "mandatory": [{"name": "Yellow fewer", "details": "Required for travellers aged 1 year or over arriving from countries with risk of yellow fever transmission, and for travellers having transited for more than 12 hours through an airport of a country with risk of yellow fever transmission."}],
+        "recommendation": [{ "name": "", "details": ""}]
+    },
+    "Argentina": {
+        "mandatory": [{"name": "", "details": ""}],
+        "recommendation": [{"name": "Yellow fever", "details": "Recommended for all travellers aged 9 months or over going to Corrientes and Misiones provinces. Generally not recommended for travellers going to Formosa Province and designated areas of Chaco, Jujuy and Salta provinces. Not recommended for travellers whose itineraries are limited to areas and provinces not listed above."}]
+    },
+    "Armenia": {
+        "mandatory": [{"name": "", "details": ""}],
+        "recommendation": [{"name": "", "details": ""}]
+    },
+    "Aruba": {
+        "mandatory": [{"name": "Yellow fever", "details": "Required for travellers aged 9 months or over arriving from countries with risk of yellow fever transmission and for travellers having transited for more than 12 hours through an airport of a country with risk of yellow fever transmission. Entry will be denied if a valid vaccination certificate cannot be provided."}],
+        "recommendation": [{"name": "", "details": ""}]
+    },
+    "Australia": {
+        "mandatory": [{"name": "Yellow fever", "details": "Required for travellers aged 1 year or over arriving from countries with risk of yellow fever transmission, and with the exception of Galápagos Islands in Ecuador, and for travellers having transited for more than 12 hours through an airport of a country with risk of yellow fever transmission and with the same exception as mentioned above."}],
+        "recommendation": [{"name": "", "details": ""}]
+    },
+    "Austria": {
+        "mandatory": [{"name": "","details": ""}],
+        "recommendation": [{"name": "", "details": ""}]
+    },
+    "Azerbaijan": {
+        "mandatory": [{"name": "", "details": ""}],
+        "recommendation": [{"name": "Malaria", "details": "Risk due exclusively to P. vivax exists from June through October in lowland areas, mainly in the area between the Kura and Arax rivers. There is no malaria transmission in Baku city (the capital city). No locally acquired cases have been reported since 2013."}]
+    },
+    "Bahamas": {
+        "mandatory": [{"name": "Yellow fever", "details": "Required for travellers aged 1 year or over, arriving from countries at risk for yellow fever transmission, and for travellers having transited for more than 12 hours through an airport of countries at risk for yellow fever transmission."}],
+        "recommendation": [{"name": "", "details": ""}]
+    },
+    "Bahrain" : {
+        "mandatory": [{"name": "Yellow fever", "details": "Required for travellers aged 9 months or over arriving from countries with risk of yellow fever transmission, and for travellers having transited for more than 12 hours through an airport of a country with risk of yellow fever transmission."}],
+        "recommendation": [{"name": "", "details": ""}]
+    }, 
+    "Bangladesh": {
+        "mandatory": [{"name": "Yellow fever", "details": "Required for travellers aged 1 year or over arriving from countries with risk of yellow fever transmission, and for travellers having transited through an airport of a country with risk of yellow fever transmission."},
+                      {"name": "Poliomielytis", "details": "Proof of vaccination requiered for arriving travellers under 5 years of age."}, 
+                      {"name": "Meningococcal meningitis", "details": "Proof of vaccination required for departing travellers in the context of Hajj."},
+                      {"name": "Seasonal influenza", "details": "Proof of vaccination required for departing travellers in the context of Hajj."}],
+        "recommendation": [{"name": "Malaria", "details": "Risk exists throughout the year with a peak during monsoon (May–October); transmission occurs only in 13 of 64 districts (both in rural and urban areas). The risk is high in Chittagong Hill Tracts (Bandarban, Rangamati, and Khagrachari), Chittogram, and Cox's Bazar districts. Low risk exists in the districts of Hobigonj, Kurigram, Moulvibazar, Mymensingh, Netrakona, Sherpur, Sunamgonj, and Sylhet. Most parts of the country, including Dhaka City, have no risk of malaria."}]              
+    },
+    "Barbados": {
+        "mandatory": [{"name": "Yellow fever", "details": "Proof of vaccination required for travellers aged 1 year or over arriving from countries with risk of yellow fever transmission, and with the exception of Guyana and Trinidad and Tobago unless an outbreak is occurring."}],
+        "recommendation": [{"name": "", "details": ""}]
+    },
+    "Belarus": {
+        "mandatory": [{"name": "","details": ""}],
+        "recommendation": [{"name": "", "details": ""}]
+    },
+    "Belgium": {
+        "mandatory": [{"name": "","details": ""}],
+        "recommendation": [{"name": "", "details": ""}]
+    },
+    "Belize": {
+        "mandatory": [{"name": "","details": ""}],
+        "recommendation": [{"name": "Malaria", "details": "Malaria risk due predominantly to P. vivax exists in some areas of Stan Creek and is negligible elsewhere."}]
+    },
+    "Benin": {
+        "mandatory": [{"name": "Yellow fever","details": "Proof of vaccination is required for all travellers aged 9 months or over."}],
+        "recommendation": [{"name": "Malaria", "details": "Malaria risk due predominantly to P. falciparum exists throughout the year in the entire country."}]
+    },
+    "Bhutan": {
+        "mandatory": [{"name": "","details": ""}],
+        "recommendation": [{"name": "Malaria", "details": "Malaria risk exists throughout the year in the southern belt of the country, which comprises seven districts: Chukha, Dagana, Pemagatshel, Samdrup Jongkhar, Samtse, Sarpang and Zhemgang. No transmission occurs in the four following districts: Bumthang, Gasa, Paro and Thimphu. Seasonal transmission during the rainy summer months occurs in focal areas in the rest of the country."}]
+    },
+    "Bolivia": {
+        "mandatory": [{"name": "Yellow fever","details": "Proof of vaccination is required for travellers aged 1 year or over arriving from countries with risk of yellow fever transmission."}],
+        "recommendation": [{"name": "Malaria", "details": "Malaria risk due almost exclusively to P. vivax (99.9%) exists throughout the year in the entire country below 2500 m. The risk of malaria is highest in the northern departments of Beni and Pando, especially in the localities of Riberalta, Guayaramerín and Sena."}]
+    },
+    "Bosnia and Herzegovina": {
+        "mandatory": [{"name": "","details": ""}],
+        "recommendation": [{"name": "", "details": ""}]
+    },
+    "Botswana": {
+        "mandatory": [{"name": "Yellow fever","details": "Proof of vaccination against yellow fever is required for travellers aged 1 year or over arriving from or having transited through a country with risk of yellow fever transmission."}],
+        "recommendation": [{"name": "Malaria", "details": "Malaria risk due predominantly to P. falciparum exists from November through May/June in the northern parts of the country: Bobirwa, Boteti, Chobe, Ngamiland, Okavango and Tutume districts/subdistricts. WHO recommended prevention in risk areas C."}]
+    },
+    "Brazil": {
+        "mandatory": [{"name": "","details": ""}],
+        "recommendation": [{"name": "Yellow fever", "details": "Recommended for all travellers aged 9 months or over going to the states of Acre, Amapá, Amazonas, Distrito Federal (including the capital Brasília), Espirito Santo, Goiás, Maranhão, Mato Grosso, Mato Grosso do Sul, Minas Gerais, Pará, Paraná, Piauí, Rio de Janeiro, Rio Grande do Sul, Rondônia, Roraima, Santa Catarina, Sao Paulo, Tocantins; as well as to designated areas of Bahia State. Vaccination is also recommended for travellers visiting Iguazu Falls. Not recommended for travellers whose itineraries are limited to areas not listed above, including the cities of Fortaleza and Recife."},
+                           {"name": "Malaria", "details": "According to 2021 data, malaria risk due to P. vivax (83%), P. falciparum and mixed infections (17%) exists in most forested areas below 900 m within in eight states of the administrative region of Amazonas (Acre, Amapá, Amazonas, Maranhão, Mato Grosso [northern part], Pará, Rondônia and Roraima). Transmission intensity varies from one municipality to another and is higher in jungle-mining areas, in agricultural settlements, in indigenous areas, and in some peripheral urban areas, including the large cities of Cruzeiro do Sul, Manaus, Porto Velho, Boa Vista, Macapá, Maraba and Rio Branco. P. vivax and P. falciparum are cocirculating in the above-mentioned areas. P. falciparum circulating in Brazil is resistant to chloroquine, hence the use of this drug for chemoprophylactic purposes is not recommended. In the states outside the administrative region of Amazonas, the risk of malaria transmission is negligible or non-existent, but there is a residual risk of P. vivax transmission in Atlantic forest areas of the states of São Paulo, Minas Gerais, Rio de Janeiro and Espirito Santo. Detailed information on the epidemiological situation of malaria in Brazil is available at www.saude.gov.br/malaria. Recommended prevention in risk areas C (areas where P. vivax and P. falciparum; A according to the level of risk in the area visited)."}]
+    },
+    "Brunei Darussalam": {
+        "mandatory": [{"name": "Yellow fever","details": "Proof of vaccination is required for travellers aged 9 months or over arriving from countries with risk of yellow fever transmission, and for travellers having transited for more than 12 hours through an airport of a country with risk of yellow fever transmission."},
+                      {"name": "Polio","details": "Vaccination is required for travellers arriving from polio-affected countries (polio-exporting countries)."}],
+        "recommendation": [{"name": "Malaria","details": "Human P. knowlesi infection has been reported. Rrecommended prevention in risk areas B."}]
+    },
+    "Bulgaria": {
+        "mandatory": [{"name": "","details": ""}],
+        "recommendation": [{"name": "", "details": ""}]
+    },
+    "Burkina Faso": {
+        "mandatory": [{"name": "Yellow fever","details": "Proof of vaccination is required for all travellers aged 9 months or over."}],
+        "recommendation": [{"name": "Malaria", "details": "Malaria risk due predominantly to P. falciparum exists throughout the year in the entire country. WHO recommended prevention type C."}]
+    },
+    "Burundi": {
+        "mandatory": [{"name": "Yellow fever ","details": "Proof of vaccination is required for all travellers aged 9 months or over."}],
+        "recommendation": [{"name": "Malaria", "details": "Malaria risk due predominantly to P. falciparum exists throughout the year in the entire country. WHO recommended prevention type C."}]
+    },
+    "Cabo Verde": {
+        "mandatory": [{"name": "Yellow fever","details": "Proof of vaccination is required for travellers aged 1 year or over arriving from countries with risk of yellow fever transmission."}],
+        "recommendation": [{"name": "Malaria", "details": "Limited malaria risk due predominantly to P. falciparum exists from August through November in Santiago Island and in Boa Vista Island. WHO recommended prevention in risk areas: A."}]
+    },
+    "Cambodia": {
+        "mandatory": [{"name": "Yellow fever","details": "Proof of vaccination is required for travellers aged 1 year or over arriving from countries with risk of yellow fever transmission, and for travellers having transited for more than 12 hours through an airport of a country with risk of yellow fever transmission."}],
+        "recommendation": [{"name": "Malaria", "details": "Malaria risk due to P. falciparum and P. vivax exists throughout the year in forested rural areas. Phnom Penh and areas close to Tonle Sap (Siem Reap) are not at risk. Risk within the tourist area surrounding Angkor Wat is negligible. P. falciparum resistance to artesunate, mefloquine, lumefantrine, and piperaquine has been reported in western Cambodia and extends to the centre of the country. P. vivax resistance to chloroquine has been reported in eastern Cambodia. WHO recommended prevention in risk areas: C."}]
+    },
+    "Cameroon": {
+        "mandatory": [{"name": "Yellow fever","details": "Proof of vaccination is required for all travellers aged 1 year or over."}],
+        "recommendation": [{"name": "Malaria", "details": "Malaria risk due predominantly to P. falciparum exists throughout the year in the entire country. WHO recommended prevention: C."}]
+    },
+    "Canada": {
+        "mandatory": [{"name": "","details": ""}],
+        "recommendation": [{"name": "", "details": ""}]
+    },
+    "Central African Republic": {
+        "mandatory": [{"name": "Yellow fever","details": "Proof of vaccination is required for all travellers aged 9 months or over."}],
+        "recommendation": [{"name": "Malaria", "details": "Malaria risk due predominantly to P. falciparum exists throughout the year in the entire country. WHO recommended prevention: C."}]
+    },
+    "Chad": {
+        "mandatory": [{"name": "Yellow fever","details": "Proof of vaccination is required for travellers aged 9 months or over arriving from countries with risk of yellow fever transmission."}],
+        "recommendation": [{"name": "Malaria", "details": "Malaria risk due predominantly to P. falciparum exists throughout the year in the entire country. WHO recommended prevention: C."}]
+    },
+    "Chile": {
+        "mandatory": [{"name": "","details": ""}],
+        "recommendation": [{"name": "", "details": ""}]
+    },
+    "China": {
+        "mandatory": [{"name": "Yellow fever","details": "Proof of vaccination is required for travellers aged 9 months or over arriving from countries with risk of yellow fever transmission, and for travellers having transited for more than 12 hours through an airport of a country with risk of yellow fever transmission."}],
+        "recommendation": [{"name": "", "details": ""}]
+    },
+    "Colombia": {
+        "mandatory": [{"name": "Yellow fever","details": "Proof of vaccination is required for travellers aged 1 year or over arriving from Angola, Brazil, Democratic Republic of the Congo, and Uganda and for travellers having transited for more than 12 hours through an airport from the same countries."}],
+        "recommendation": [{"name": "Malaria", "details": "Malaria risk is high in some municipalities of the departments of Antioquia, Bolívar, Cauca, Chocó, Córdoba, La Guajira, Nariño, and Risaralda. Lower level risk is also present in some municipalities of Amazonas, Caqueta, Guaviare, Guainía, Meta, Norte de Santander, Putumayo, Vaupes, and Vichada. WHO recommended prevention in risk areas: C."}]
+    },
+    "Comoros": {
+        "mandatory": [{"name": "","details": ""}],
+        "recommendation": [{"name": "Malaria", "details": "Malaria risk due predominantly to P. falciparum exists throughout the year in the entire country. WHO recommended prevention: C."}] 
+    },
+    "Congo": {
+        "mandatory": [{"name": "Yellow fever","details": "Proof of vaccination is required for all travellers aged 9 months or over."}],
+        "recommendation": [{"name": "Malaria", "details": "Malaria risk due predominantly to P. falciparum exists throughout the year in the entire country. WHO recommended prevention: C."}]
+    },
+    "Cook Islands": {
+        "mandatory": [{"name": "","details": ""}],
+        "recommendation": [{"name": "", "details": ""}]
+    },
+    "Costa Rica": {
+        "mandatory": [{"name": "Yellow fever","details": "Proof of vaccination is required for travellers aged 9 months or over arriving from countries with risk of yellow fever transmission, with the addition of Tanzania and Zambia in the African region; the exception of Argentina and Panama in the Americas; and the following specifications for the following countries: Colombia (the entire country except Bogotá (the capital), Barranquilla, Cali, Cartagena, Medellín, and San Andrés Providencia); Ecuador (applies only to MoronaSantiago, Napo, Orellana, Pastaza, Sucumbíos, and Zamora-Chinchipe); Paraguay (the entire country except Asunción (the capital)); Peru (the entire country except Lima (the capital), Cajamarca, Cuzco, Lambayeque, Machu Picchu, Ruta de los Incas, Piura, Tumbes); Trinidad and Tobago (the entire country except the urban areas of Port of Spain (the capital), and for travellers in transit or whose itineraries are limited to the island of Tobago)."}],
+        "recommendation": [{"name": "Malaria", "details": "Very low malaria risk was historically due almost exclusively to P. vivax. Negligible or no risk of malaria transmission exists in the country. WHO recommended prevention in risk areas: A."}]
+    },
+    "Côte d'Ivoire": {
+        "mandatory": [{"name": "Yellow fever","details": "Proof of vaccination is required for all travellers aged 9 months or over."}],
+        "recommendation": [{"name": "Malaria", "details": "Malaria risk due predominantly to P. falciparum exists throughout the year in the entire country. WHO recommended prevention: C."}]
+    }    
+}]
