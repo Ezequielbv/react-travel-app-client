@@ -52,7 +52,7 @@ function LocationFormProviderWrapper(props) {
               setLong(requestBody.coordinates[0]);
               setWeatherLat(requestBody.coordinates[1]);
               setWeatherLong(requestBody.coordinates[0]);
-              navigate("/test");
+              navigate("/profile");
           })
           .catch(err => console.log(err))
     }
