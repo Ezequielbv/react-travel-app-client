@@ -1,33 +1,25 @@
 import "./CountryInfo.css";
-import React, { useState, useEffect, useContext }   from "react";
-import { Dimmer, Loader }                           from "semantic-ui-react";
-import { Link, useNavigate }                        from "react-router-dom";
-import AddNote                                      from "../AddNote/AddNote";
-import NoteCard                                     from "../NoteCard/NoteCard";
-import VaccinationReco                              from "../VaccinationReco/VaccinationReco";
-import whoVaccination                               from "../../who-vaccination.json";
-import WeatherInfo                    from "../../components/WeatherInfo/WeatherInfo";
-import ForecastInfo                   from "../../components/ForecastInfo/ForecastInfo";
-import axios                                        from "axios";
+import React, { useState, useEffect, useContext } from "react";
+import { Dimmer, Loader } from "semantic-ui-react";
+import { Link, useNavigate } from "react-router-dom";
+import AddNote from "../AddNote/AddNote";
+import NoteCard from "../NoteCard/NoteCard";
+import VaccinationReco from "../VaccinationReco/VaccinationReco";
+import whoVaccination from "../../who-vaccination.json";
+import axios from "axios";
 
-const COUNTRY_API_URL   = "https://restcountries.com/v3.1";
-const DB_BE_URL         = "http://localhost:5005";
+
+const COUNTRY_API_URL = "https://restcountries.com/v3.1";
+const DB_BE_URL = "http://localhost:5005";
 
 function CountryInfo({ country }) {
   let countryInfo = country.city.split(", ").slice(-1);
   //console.log(countryInfo)
   const [countryData, setCountryData] = useState("");
-  const [fetching, setFetching]       = useState(true);
-  const [location, setLocation]       = useState(null);
-  const [vaxList, setvaxList]         = useState(whoVaccination);
-  //console.log("vax", Object.keys(vaxList[0]));
-  const vaxArr = Object.keys(vaxList[0]);
-  console.log("Vaccination array:", vaxArr)
-//   vaxArr.map((vaxCountry) => {
-//     if(vaxCountry == countryInfo) {
-//         console.log('pass');
-//     }
-//   });
+  const [fetching, setFetching] = useState(true);
+  const [location, setLocation] = useState(null);
+  const [vaxList, setvaxList] = useState(whoVaccination);
+  const vaxArr = Object.keys(vaxList); //returns array with country names
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -44,7 +36,6 @@ function CountryInfo({ country }) {
       .get(`${DB_BE_URL}/api/locations/${country._id}`)
       .then((response) => {
         const oneLocation = response.data;
-        //   console.log("HERE FE", oneLocation);
         setLocation(oneLocation);
       })
       .catch((error) => console.log(error));
@@ -66,7 +57,6 @@ function CountryInfo({ country }) {
       .catch((err) => console.log(err));
   };
 
-  // {countryData?
   return countryData ? (
     <>
       {/* <h2>HELLO</h2> */}
@@ -136,23 +126,13 @@ function CountryInfo({ country }) {
                 ))}
             </div>
           </section>
-        </div>
-            {vaxArr.map((vaxCountry => {
-                if(vaxCountry === countryInfo[0]){
-                    /* console.log("HERE LOG", vaxList[0])
-                    console.log("HERE LOG", countryInfo[0]) */
-                    return(
-                        <>
-                          <section className="vaccination-reco">
-                            <VaccinationReco vaxList={ vaxList} countryInfo={ countryInfo }/>
-                          </section>
-                        </>
-                    )
-                }
-                
-            }))}
-            
-        </div>
+
+          {vaxList[countryInfo] &&
+            <section className="vaccination-reco">
+              <VaccinationReco vaxCountry={vaxList[countryInfo]} />
+            </section>
+          }
+          </div>
       {/* </div> */}
     </>
   ) : (

@@ -29,11 +29,10 @@ function ProfilePage() {
         {countries?.map((country) => {
           return (
             <>
-              <div className="card">
-                <CountryInfo country={country}/>
-                {/* <WeatherInfo coordinates={ country.coordinates }/> 
-                <ForecastInfo coordinates={ country.coordinates }/> */}
-              </div>
+
+              <CountryInfo country={country}/>
+              {/* <WeatherInfo coordinates={ country.coordinates }/> 
+              <ForecastInfo coordinates={ country.coordinates }/> */}
             </>
           )
         })}
