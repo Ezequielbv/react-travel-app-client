@@ -17,6 +17,8 @@ function LocationFormProviderWrapper(props) {
     const [date, setDate]                   = useState("");
     const [coordinates, setCoordinates]     = useState([]);
     const address                           = useInput("");
+    const [ latHomeMap, setLatHomeMap ] = useState(13.4)
+    const [ longHomeMap, setLongHomeMap ] = useState(52.5)
     const { user } = useContext(AuthContext);
     const handleCity  = (e) => setCity(e.target.value);
     const handleDate  = (e) => setDate(e.target.value);
@@ -27,12 +29,15 @@ function LocationFormProviderWrapper(props) {
         setCity(suggestion.place_name);
         setCountry(suggestion.place_name.split(', ')[suggestion.place_name.split(', ').length - 1])
         setCoordinates(suggestion.center);
+        setLatHomeMap(suggestion.center[0]);
+        setLongHomeMap(suggestion.center[1]);
     };
     const navigate = useNavigate();
     const handleSubmit = event => {
         event.preventDefault();
+        console.log("USER:", user);
         const requestBody = {
-          user,
+          userOwnerId: user._id,
           city,
           country,
           date,
@@ -54,6 +59,8 @@ function LocationFormProviderWrapper(props) {
     return (
         <LocationFormContext.Provider
           value={{
+            latHomeMap,
+            longHomeMap,
             setLat,
             setLong,
             setWeatherLat,
