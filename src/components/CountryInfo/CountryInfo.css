@@ -1,3 +1,17 @@
 .notes-section {
     border: 1px dashed grey;
 }
+
+.card-body {
+    height: auto;
+    align-items: center;    
+}
+
+.countryInfo {
+    width: 30%;
+    padding: 30px 20px;
+    border: 1px dashed grey;
+    border-radius: 5px;;
+    text-align: left;
+    background-color: var(--color-theme-3);
+}

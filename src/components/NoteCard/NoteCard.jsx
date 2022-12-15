@@ -1,3 +1,4 @@
+import './NoteCard.css'
 import axios from 'axios';
 import { Link, useNavigate } from "react-router-dom";
 
@@ -20,13 +21,18 @@ function NoteCard({ title, description, _id, refreshLocation }) {
   };
 
   return (
-    <div className="NoteCard card">
-      <h3 className="note-title">{title}</h3>
-      {/* <h4>Description:</h4> */}
-      <p className="note-description">{description}</p>
+    <div className="NoteCard">
+      <div><h3 className="note-title">{title}</h3>
+      <hr/></div>
       <div>
+        <p className="note-description">{description}</p>
+        <hr/>
+        <hr/>
+        <hr/>
+      </div>
+      <div className="note-actionbuttons">
         <Link to={`/notes/edit/${_id}`}><button className="btn btn-info btn-sm">Edit</button></Link>
-        <button className="btn btn-secondary btn-sm" onClick={deleteNote}>Delete</button>
+        <button className="btn btn-secondary btn-sm" onClick={deleteNote}>x</button>
       </div>
     </div>
   );

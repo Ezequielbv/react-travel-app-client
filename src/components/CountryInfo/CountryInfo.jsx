@@ -6,6 +6,8 @@ import AddNote                                      from "../AddNote/AddNote";
 import NoteCard                                     from "../NoteCard/NoteCard";
 import VaccinationReco                              from "../VaccinationReco/VaccinationReco";
 import whoVaccination                               from "../../who-vaccination.json";
+import WeatherInfo                    from "../../components/WeatherInfo/WeatherInfo";
+import ForecastInfo                   from "../../components/ForecastInfo/ForecastInfo";
 import axios                                        from "axios";
 
 const COUNTRY_API_URL   = "https://restcountries.com/v3.1";
@@ -68,48 +70,58 @@ function CountryInfo({ country }) {
   return countryData ? (
     <>
       {/* <h2>HELLO</h2> */}
-      <div key={country._id} className="card">
-        <div className="card-header" id="headingTwo">
+      {/* <div className=""> */}
+        <div key={country._id} className="card-header d-flex justify-content-between" id={`heading${country._id}`}>
           <h2 className="mb-0">
             <button
               className="btn btn-link btn-block text-left collapsed"
               type="button"
               data-toggle="collapse"
-              data-target="#collapseTwo"
+              data-target={`#collapse${country._id}`}
               aria-expanded="false"
-              aria-controls="collapseTwo"
+              aria-controls={`collapse${country._id}`}
             >
               {country.city}
             </button>
           </h2>
-          <button className="btn btn-danger" onClick={deleteLocation}>
+          <button className="btn btn-danger btn-sm" onClick={deleteLocation}>
             X
           </button>
         </div>
         <div
-          id="collapseTwo"
+          id={`collapse${country._id}`}
           className="collapse"
-          aria-labelledby="headingTwo"
+          aria-labelledby={`heading${country._id}`}
           data-parent="#accordionExample"
         >
-          <div className="card-body">
+          <div className="card-body flex-row flex-wrap">
             <div className="countryInfo">
               <p>
-                Country's native name:{" "}
-                {Object.entries(countryData[0].name.nativeName)[0][1].common}
+                Country's native name:<br/>
+                <span>{Object.entries(countryData[0].name.nativeName)[0][1].common}</span>
               </p>
-              <p>Capital: {countryData[0].capital}</p>
+              <hr/>
+              <p>Capital: <br/><span>{countryData[0].capital}</span></p>
+              <hr/>
               <p>
-                Currency: {Object.entries(countryData[0].currencies)[0][1].name}
+                Currency: <br/><span>{Object.entries(countryData[0].currencies)[0][1].name}</span>
               </p>
+              <hr/>
               <p>
-                Languages:{" "}
+                Languages:<br/>
+                <ul>
                 {Object.entries(countryData[0].languages).map((el) => {
                   return <li>{el[1]}</li>;
                 })}
+                </ul>
               </p>
             </div>
-          </div>
+          
+          <section className="weather-section d-flex">
+            <WeatherInfo coordinates={ country.coordinates }/> 
+            <ForecastInfo coordinates={ country.coordinates }/>
+          </section>
+
           <section className="notes-section d-flex justify-content-center">
             <AddNote refreshLocation={getLocation} locationId={country._id} />
             <div className="notes-list d-flex justify-content-center">
@@ -124,7 +136,7 @@ function CountryInfo({ country }) {
                 ))}
             </div>
           </section>
-
+        </div>
             {vaxArr.map((vaxCountry => {
                 if(vaxCountry === countryInfo[0]){
                     /* console.log("HERE LOG", vaxList[0])
@@ -141,7 +153,7 @@ function CountryInfo({ country }) {
             }))}
             
         </div>
-      </div>
+      {/* </div> */}
     </>
   ) : (
     <>

@@ -1,8 +1,8 @@
 import "./ProfilePage.css";
 import React, { useState, useEffect } from "react";
 import CountryInfo                    from "../../components/CountryInfo/CountryInfo";
-import WeatherInfo                    from "../../components/WeatherInfo/WeatherInfo";
-import ForecastInfo                   from "../../components/ForecastInfo/ForecastInfo";
+// import WeatherInfo                    from "../../components/WeatherInfo/WeatherInfo";
+// import ForecastInfo                   from "../../components/ForecastInfo/ForecastInfo";
 import axios                          from 'axios';
 
 const DB_BE_URL = 'http://localhost:5005';
@@ -29,9 +29,11 @@ function ProfilePage() {
         {countries?.map((country) => {
           return (
             <>
-              <CountryInfo country={country}/>
-              <WeatherInfo coordinates={ country.coordinates }/> 
-              <ForecastInfo coordinates={ country.coordinates }/>
+              <div className="card">
+                <CountryInfo country={country}/>
+                {/* <WeatherInfo coordinates={ country.coordinates }/> 
+                <ForecastInfo coordinates={ country.coordinates }/> */}
+              </div>
             </>
           )
         })}
