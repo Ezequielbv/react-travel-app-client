@@ -29,7 +29,7 @@ function ForecastInfo({ coordinates }) {
 
     return forecastData ?
         (<>
-            <label className="title">Daily</label>
+            {/* <label className="title">Daily</label> */}
             <Accordion>
                 {forecastData.list.splice(0, 7).map((item, index) => (
                     <AccordionItem key={index}>
