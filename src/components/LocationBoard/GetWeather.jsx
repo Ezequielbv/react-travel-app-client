@@ -4,7 +4,7 @@ import { WeatherContext }   from "../../context/weather.context";
 import { Dimmer, Loader }   from 'semantic-ui-react';
 import './GetWeather.css';
 
-function GetWeather() {
+function GetWeather({}) {
   const  { data }   = useContext(WeatherContext);
   data && console.log("datagetweather", data)
 
