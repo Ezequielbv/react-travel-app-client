@@ -40,7 +40,7 @@ function GenerateMap() {
   }, []);
 
   return (
-    <div>
+    <div className="container">
       <div id="mapbox-all" />
     </div>
   )
