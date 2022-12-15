@@ -1,0 +1,16 @@
+.NoteCard {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 20px;
+    text-align: left;
+    background-color: var(--main-color);
+}
+
+.note-actionbuttons {
+    display: flex;
+    justify-content: flex-end;
+}
+.note-actionbuttons a {
+    margin-right: 5px;
+}
