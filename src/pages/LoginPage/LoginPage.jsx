@@ -22,7 +22,7 @@ function LoginPage() {
 
     // Send a request to the server using axios
     /* 
-    axios.post(`${process.env.REACT_APP_SERVER_URL}/auth/login`)
+    axios.post(`${process.env.REACT_APP_API_URL}/auth/login`)
       .then((response) => {})
     */
 

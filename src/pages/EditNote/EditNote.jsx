@@ -3,7 +3,7 @@ import { useState, useEffect } from "react";
 import { useParams, useNavigate } from 'react-router-dom';
 import axios from "axios";
 
-const API_URL = "http://localhost:5005";
+// const API_URL = "http://localhost:5005";
 
 function EditNote(props) {
   const [title, setTitle] = useState("");
@@ -14,7 +14,7 @@ function EditNote(props) {
   
   useEffect(() => {
     axios
-      .get(`${API_URL}/api/notes/${noteId}`)
+      .get(`${process.env.REACT_APP_API_URL}/api/notes/${noteId}`)
       .then((response) => {
         const oneNote = response.data;
         setTitle(oneNote.title);
@@ -30,7 +30,7 @@ function EditNote(props) {
     const requestBody = { title, description };
 
     axios
-      .put(`${API_URL}/api/notes/${noteId}`, requestBody)
+      .put(`${process.env.REACT_APP_API_URL}/api/notes/${noteId}`, requestBody)
       .then((response) => {
         navigate(`/profile`)
       });

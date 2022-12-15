@@ -2,7 +2,7 @@ import './AddNote.css';
 import { useState } from "react";
 import axios from "axios";
 
-const API_URL = "http://localhost:5005";
+// const API_URL = "http://localhost:5005";
 
 
 function AddNote(props) {
@@ -18,7 +18,7 @@ function AddNote(props) {
     // console.log({ title, description, locationId })
 
     axios
-      .post(`${API_URL}/api/notes`, requestBody)
+      .post(`${process.env.REACT_APP_API_URL}/api/notes`, requestBody)
       .then((response) => {
           console.log("passed");
         setTitle("");

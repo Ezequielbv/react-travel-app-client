@@ -5,7 +5,7 @@ import axios from 'axios';
 import './GenerateMapUser.css'
 
 /*  Declare tokens and API URL  */
-const DB_LOCATION = 'http://localhost:5005/api';
+// const DB_LOCATION = 'http://localhost:5005/api';
 let coordinatesArray = [];
 let index = 0;
 mapboxgl.accessToken = process.env.REACT_APP_MAPBOX_API_ACCESS_TOKEN;
@@ -29,7 +29,7 @@ function GenerateMapUser() {
             console.log(user._id)
 
             /*  Get coordinates of all a specific user  */
-            axios.get(`${DB_LOCATION}/user-coordinates/${user._id}`)
+            axios.get(`${process.env.REACT_APP_API_URL}/api/user-coordinates/${user._id}`)
                 .then(location => {
                     location.data.coordinates.forEach((coordinate) =>
                         //console.log(coordinate.coordinates)

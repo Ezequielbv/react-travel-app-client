@@ -9,7 +9,7 @@ import whoVaccination from "../../who-vaccination.json";
 import axios from "axios";
 
 const COUNTRY_API_URL = "https://restcountries.com/v3.1";
-const DB_BE_URL = "http://localhost:5005";
+// const DB_BE_URL = "http://localhost:5005";
 
 function CountryInfo({ country }) {
   let countryInfo = country.city.split(", ").slice(-1);
@@ -32,7 +32,7 @@ function CountryInfo({ country }) {
   //get Location iD
   const getLocation = () => {
     axios
-      .get(`${DB_BE_URL}/api/locations/${country._id}`)
+      .get(`${process.env.REACT_APP_API_URL}/api/locations/${country._id}`)
       .then((response) => {
         const oneLocation = response.data;
         setLocation(oneLocation);
@@ -46,7 +46,7 @@ function CountryInfo({ country }) {
   const deleteLocation = () => {
     // Make a DELETE request to delete the project
     axios
-      .delete(`${DB_BE_URL}/api/locations/${country._id}`)
+      .delete(`${process.env.REACT_APP_API_URL}/api/locations/${country._id}`)
       .then(() => {
         console.log("deleted: ", country._id);
         // Once the delete request is resolved successfully

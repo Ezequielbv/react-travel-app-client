@@ -3,7 +3,7 @@ import axios from 'axios';
 import { Link, useNavigate } from "react-router-dom";
 
 // We are deconstructing the props object directly in the parentheses of the function
-const DB_BE_URL = "http://localhost:5005";
+// const DB_BE_URL = "http://localhost:5005";
 
 function NoteCard({ title, description, _id, refreshLocation }) {
   // console.log("note", { title, description, _id })
@@ -11,7 +11,7 @@ function NoteCard({ title, description, _id, refreshLocation }) {
 
   const deleteNote = () => {
     axios
-      .delete(`${DB_BE_URL}/api/notes/${_id}`)
+      .delete(`${process.env.REACT_APP_API_URL}/api/notes/${_id}`)
       .then(() => {
         // console.log("deleted note: ", _id)
         refreshLocation();
