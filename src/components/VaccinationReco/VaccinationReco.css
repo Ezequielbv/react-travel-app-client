@@ -4,11 +4,7 @@
     color: black
 }
 
-.text-white {
-    color: rgb(0 0 0 / 78%)!important;
-}
-
-.card-header {
+.vax-header {
     height: 200px;
     padding: 0;
 }

@@ -3,8 +3,8 @@ import './VaccinationReco.css'
 function VaccinationReco({ vaxCountry }) {
     console.log(vaxCountry)
     return (
-        <div className="vax-card card text-white bg-warning mb-3">
-            <div class="card-header">
+        <div className="vax-card card bg-warning mb-3">
+            <div class="vax-header card-header">
                 <div className="vax-logo">
                     <img src="./images/who-main-logo.png" alt="WHO logo" />
                 </div>
